@@ -9,6 +9,25 @@
  */
 const { useState, useEffect, useRef, useMemo } = React;
 
+/* ===================== 클라우드 동기화 설정 (Supabase) =====================
+ * 아래 두 값은 빌드 시 사용자의 Supabase 프로젝트 값으로 치환됩니다.
+ * anon key는 공개돼도 안전한 키이며, 데이터 보호는 DB의 Row Level Security가 담당합니다. */
+const SUPABASE_URL = "https://kdggqlwpunuhcspbpmwt.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_SrXljOFo0RJwKBg-t8cH8g_7lcVM-Ys";
+const SYNC_ON = /^https:\/\/[a-z0-9.-]+\.supabase\.co/i.test(SUPABASE_URL) &&
+  typeof window !== "undefined" && !!(window.supabase && window.supabase.createClient);
+const sb = SYNC_ON ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+const SMETA = "fc.__syncmeta";
+const isFcKey = (k) => k.indexOf("fc.") === 0 && k !== SMETA;
+function syncSnapshot() { const d = {}; for (const k of Object.keys(localStorage)) if (isFcKey(k)) { try { d[k] = JSON.parse(localStorage.getItem(k)); } catch {} } return d; }
+function syncWrite(data) { for (const k of Object.keys(localStorage)) if (isFcKey(k)) localStorage.removeItem(k); for (const k of Object.keys(data || {})) { try { localStorage.setItem(k, JSON.stringify(data[k])); } catch {} } }
+function hashOf(obj) { const ks = Object.keys(obj || {}).filter((k) => k !== SMETA).sort(); return ks.map((k) => k + "=" + JSON.stringify(obj[k])).join("\n"); }
+function localHash() { return hashOf(syncSnapshot()); }
+function readMeta() { try { return JSON.parse(localStorage.getItem(SMETA)) || {}; } catch { return {}; } }
+function writeMeta(m) { try { localStorage.setItem(SMETA, JSON.stringify(m)); } catch {} }
+function hasRealData() { try { return !!JSON.parse(localStorage.getItem("fc.profile") || "null"); } catch { return false; } }
+
 /* ============================ 데이터(Node 주입) ============================ */
 const STRENGTH = {
   "principles": [
@@ -2284,7 +2303,7 @@ function useLocal(key, initial) {
   const [val, setVal] = useState(() => {
     try { const raw = localStorage.getItem(key); return raw != null ? JSON.parse(raw) : initial; } catch { return initial; }
   });
-  useEffect(() => { try { localStorage.setItem(key, JSON.stringify(val)); } catch {} }, [key, val]);
+  useEffect(() => { try { localStorage.setItem(key, JSON.stringify(val)); window.dispatchEvent(new Event("fc:changed")); } catch {} }, [key, val]);
   return [val, setVal];
 }
 
@@ -2979,6 +2998,168 @@ function ProfileModal({ profile, setProfile, onClose }) {
 }
 
 /* ============================ 앱 루트 ============================ */
+/* ============================ 클라우드 동기화 훅·UI ============================ */
+function fmtSyncTime(iso) {
+  try { return new Date(iso).toLocaleString("ko-KR", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }); }
+  catch { return ""; }
+}
+const SYNC_STATUS = { idle: "대기", syncing: "동기화 중…", saved: "최신 상태", error: "오류", offline: "오프라인" };
+
+function useCloudSync() {
+  const [user, setUser] = useState(null);
+  const [status, setStatus] = useState("idle");
+  const [lastSync, setLastSync] = useState(() => readMeta().remoteUpdatedAt || null);
+  const [err, setErr] = useState("");
+  const pushTimer = useRef(null);
+  const busy = useRef(false);
+  const userRef = useRef(null);
+  userRef.current = user;
+
+  async function pushRaw(uid) {
+    const snap = syncSnapshot();
+    const now = new Date().toISOString();
+    const { error } = await sb.from("app_state").upsert({ user_id: uid, data: snap, updated_at: now });
+    if (error) throw error;
+    const m = readMeta(); m.syncedHash = hashOf(snap); m.remoteUpdatedAt = now; writeMeta(m); setLastSync(now);
+  }
+  function applyRemote(data) {
+    syncWrite(data.data || {});
+    const m = readMeta();
+    m.syncedHash = hashOf(data.data || {}); m.remoteUpdatedAt = data.updated_at;
+    m.localChangedAt = Date.parse(data.updated_at) || Date.now(); writeMeta(m);
+    location.reload();
+  }
+  async function reconcile(uid) {
+    if (!sb || busy.current) return;
+    busy.current = true; setStatus("syncing"); setErr("");
+    try {
+      const { data, error } = await sb.from("app_state").select("data,updated_at").eq("user_id", uid).maybeSingle();
+      if (error) throw error;
+      const m = readMeta();
+      if (!data) { await pushRaw(uid); setStatus("saved"); return; }
+      const rh = hashOf(data.data || {});
+      if (rh === localHash()) { m.syncedHash = rh; m.remoteUpdatedAt = data.updated_at; writeMeta(m); setLastSync(data.updated_at); setStatus("saved"); return; }
+      let remoteWins;
+      if (!hasRealData()) remoteWins = true;
+      else remoteWins = window.confirm(
+        "클라우드에 저장된 데이터가 이 기기와 다릅니다.\n\n[확인] 클라우드 데이터를 이 기기로 받기\n[취소] 이 기기 데이터를 클라우드에 올리기\n\n(클라우드 최종 수정: " + fmtSyncTime(data.updated_at) + ")");
+      if (remoteWins) { applyRemote(data); return; }
+      await pushRaw(uid); setStatus("saved");
+    } catch (e) { setStatus("error"); setErr((e && e.message) || String(e)); }
+    finally { busy.current = false; }
+  }
+  async function pullApply(uid) {
+    if (!sb || busy.current) return;
+    try {
+      const { data, error } = await sb.from("app_state").select("data,updated_at").eq("user_id", uid).maybeSingle();
+      if (error || !data) return;
+      const m = readMeta();
+      if (data.updated_at === m.remoteUpdatedAt) return;
+      if (hashOf(data.data || {}) === localHash()) { m.remoteUpdatedAt = data.updated_at; writeMeta(m); return; }
+      const remoteMs = Date.parse(data.updated_at) || 0, localMs = m.localChangedAt || 0;
+      if (remoteMs >= localMs) applyRemote(data);
+    } catch {}
+  }
+  async function doPush() {
+    const u = userRef.current;
+    if (!sb || !u || busy.current) return;
+    if (readMeta().syncedHash === localHash()) return;
+    busy.current = true; setStatus("syncing");
+    try { await pushRaw(u.id); setStatus("saved"); }
+    catch (e) { setStatus("error"); setErr((e && e.message) || String(e)); }
+    finally { busy.current = false; }
+  }
+
+  // 인증 부트스트랩
+  useEffect(() => {
+    if (!sb) return;
+    let sub;
+    sb.auth.getSession().then(({ data }) => {
+      const u = data.session ? data.session.user : null;
+      setUser(u ? { id: u.id, email: u.email } : null);
+      if (u) reconcile(u.id);
+    });
+    try { sub = sb.auth.onAuthStateChange((_e, session) => {
+      const u = session ? session.user : null;
+      setUser(u ? { id: u.id, email: u.email } : null);
+      if (u) reconcile(u.id);
+    }).data.subscription; } catch {}
+    return () => { try { sub && sub.unsubscribe(); } catch {} };
+  }, []);
+
+  // 로컬 변경 → 디바운스 푸시
+  useEffect(() => {
+    if (!sb) return;
+    const onChange = () => {
+      const m = readMeta();
+      if (localHash() === m.syncedHash) return;
+      m.localChangedAt = Date.now(); writeMeta(m);
+      if (!userRef.current) return;
+      clearTimeout(pushTimer.current);
+      pushTimer.current = setTimeout(doPush, 1500);
+    };
+    window.addEventListener("fc:changed", onChange);
+    return () => window.removeEventListener("fc:changed", onChange);
+  }, []);
+
+  // 포커스/주기적 풀
+  useEffect(() => {
+    if (!sb || !user) return;
+    const onFocus = () => { if (document.visibilityState === "visible") pullApply(user.id); };
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onFocus);
+    const iv = setInterval(onFocus, 30000);
+    return () => { window.removeEventListener("focus", onFocus); document.removeEventListener("visibilitychange", onFocus); clearInterval(iv); };
+  }, [user]);
+
+  return {
+    enabled: !!sb, user, status, lastSync, err,
+    signIn: async (email, password) => { setErr(""); const { error } = await sb.auth.signInWithPassword({ email, password }); if (error) { setErr(error.message); return false; } return true; },
+    signUp: async (email, password) => { setErr(""); const { data, error } = await sb.auth.signUp({ email, password }); if (error) { setErr(error.message); return false; } if (!data.session) { setErr("가입됨. 이메일 인증이 켜져 있으면 받은 메일을 확인한 뒤 로그인하세요."); return false; } return true; },
+    signOut: async () => { try { await sb.auth.signOut(); } catch {} setUser(null); setStatus("idle"); writeMeta({}); },
+    syncNow: async () => { const u = userRef.current; if (u) { await pullApply(u.id); await doPush(); } },
+  };
+}
+
+function SyncModal({ sync, onClose }) {
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
+  const [mode, setMode] = useState("in");
+  const [busy, setBusy] = useState(false);
+  const submit = async () => {
+    setBusy(true);
+    if (mode === "in") await sync.signIn(email.trim(), pw);
+    else await sync.signUp(email.trim(), pw);
+    setBusy(false);
+  };
+  return <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 sm:items-center" onClick={onClose}>
+    <div className="w-full max-w-md rounded-t-3xl bg-zinc-900 p-5 ring-1 ring-zinc-700/50 sm:rounded-3xl" onClick={(e) => e.stopPropagation()}>
+      <div className="mb-3 flex items-center justify-between">
+        <h2 className="text-lg font-extrabold">☁ 기기 간 동기화</h2>
+        <button onClick={onClose} className="px-1 text-xl leading-none text-zinc-500 hover:text-zinc-300">✕</button>
+      </div>
+      {sync.user ? <div className="space-y-3">
+        <p className="text-sm text-zinc-300">로그인됨 · <b className="text-emerald-300">{sync.user.email}</b></p>
+        <p className="text-xs text-zinc-500">상태: {SYNC_STATUS[sync.status] || sync.status}{sync.lastSync ? " · 마지막 동기화 " + fmtSyncTime(sync.lastSync) : ""}</p>
+        <p className="text-xs leading-relaxed text-zinc-500">이 계정으로 로그인한 모든 기기에서 데이터가 자동으로 동기화됩니다. 기록을 바꾸면 잠시 뒤 자동 저장되고, 다른 기기에서 앱을 열면 최신 데이터를 받아옵니다.</p>
+        {sync.err && <p className="rounded-lg bg-rose-500/10 p-2 text-xs text-rose-300">{sync.err}</p>}
+        <div className="flex gap-2">
+          <button onClick={sync.syncNow} className="flex-1 rounded-2xl bg-emerald-500 py-3 text-sm font-bold text-zinc-950 hover:bg-emerald-400">지금 동기화</button>
+          <button onClick={sync.signOut} className="rounded-2xl border border-zinc-700 px-4 py-3 text-sm font-semibold text-zinc-300 hover:bg-zinc-800">로그아웃</button>
+        </div>
+      </div> : <div className="space-y-3">
+        <p className="text-xs leading-relaxed text-zinc-400">이메일로 계정을 만들면 폰·PC 등 모든 기기에서 같은 데이터를 쓸 수 있어요. 비밀번호는 이 앱 동기화 전용입니다.</p>
+        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" placeholder="이메일" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
+        <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder="비밀번호 (6자 이상)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
+        {sync.err && <p className="rounded-lg bg-rose-500/10 p-2 text-xs text-rose-300">{sync.err}</p>}
+        <button disabled={busy || !email || pw.length < 6} onClick={submit} className="w-full rounded-2xl bg-emerald-500 py-3 text-sm font-bold text-zinc-950 hover:bg-emerald-400 disabled:opacity-50">{busy ? "처리 중…" : (mode === "in" ? "로그인" : "계정 만들기")}</button>
+        <button onClick={() => setMode(mode === "in" ? "up" : "in")} className="w-full text-center text-xs text-zinc-400 hover:text-zinc-200">{mode === "in" ? "처음이세요? 계정 만들기" : "이미 계정이 있어요 → 로그인"}</button>
+        <p className="text-[11px] leading-relaxed text-zinc-600">⚠ 여러 기기를 처음 연결할 땐 어느 데이터를 쓸지 물어봅니다. 걱정되면 먼저 진행 탭에서 '백업(JSON)'을 받아두세요.</p>
+      </div>}
+    </div>
+  </div>;
+}
+
 function App() {
   const [profile, setProfile] = useLocal("fc.profile", null);
   const [weightLog, setWeightLog] = useLocal("fc.weightLog", []);
@@ -2987,6 +3168,8 @@ function App() {
   const [waterMap, setWaterMap] = useLocal("fc.water", {});
   const [habits, setHabits] = useLocal("fc.habits", {});
   const [phaseIdx, setPhaseIdx] = useLocal("fc.phaseIdx", 0);
+  const sync = useCloudSync();
+  const [showSync, setShowSync] = useState(false);
   const [dayIdx, setDayIdx] = useState(0);
   const [tab, setTab] = useState("home");
   const [showProfile, setShowProfile] = useState(false);
@@ -3021,7 +3204,10 @@ function App() {
     <header className="sticky top-0 z-30 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
       <div className="mx-auto flex max-w-md items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2"><span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-5 h-5" stroke={2.4} /></span><span className="text-lg font-extrabold tracking-tight">핏코치</span></div>
-        <button onClick={() => setShowProfile(true)} className="flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700"><Ico name="edit" className="w-3.5 h-3.5" /> 내 정보</button>
+        <div className="flex items-center gap-2">
+          {sync.enabled && <button onClick={() => setShowSync(true)} title="기기 간 동기화" className="flex items-center gap-1.5 rounded-full bg-zinc-800 px-2.5 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700"><span className={cls("h-2 w-2 rounded-full", sync.user ? (sync.status === "error" ? "bg-rose-400" : "bg-emerald-400") : "bg-zinc-500")} />☁</button>}
+          <button onClick={() => setShowProfile(true)} className="flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700"><Ico name="edit" className="w-3.5 h-3.5" /> 내 정보</button>
+        </div>
       </div>
     </header>
 
@@ -3039,6 +3225,7 @@ function App() {
     </nav>
 
     {showProfile && <ProfileModal profile={profile} setProfile={setProfile} onClose={() => setShowProfile(false)} />}
+    {showSync && <SyncModal sync={sync} onClose={() => setShowSync(false)} />}
   </div>;
 }
 
