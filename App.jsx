@@ -1,6 +1,6 @@
 /*
- * 핏코치 (FitCoach) — 개인 맞춤 다이어트·근력·유산소·식단 코칭 앱
- * 사용자: 남 188cm / 113kg → 목표 83kg / 주4회 4분할(가슴삼두·등이두·하체·팔어깨) / 계란 제외 / 무릎 보호
+ * 핏코치 (FitCoach) — 개인 맞춤 체중관리·근력·유산소·식단 코칭 앱
+ * 사용자: 프로필 기반 개인 맞춤(성별·키·체중·목표 입력) / 주4회 4분할(가슴삼두·등이두·하체·팔어깨) / 식성·무릎 옵션 반영
  * IA: 4탭(홈/운동/식단/진행) · 신호등+숫자 식단 · 규칙형 다음무게제안 · 무릎위험 플래그+대체운동
  *
  * 브라우저 직접 실행용(전역 React). Vite/CRA로 옮기려면:
@@ -41,11 +41,11 @@ const STRENGTH = {
     },
     {
       "name": "자세가 무게보다 우선",
-      "desc": "초보자이자 고체중자는 부상 위험이 크다. 처음 4주는 '무게를 든다'가 아니라 '정확한 패턴을 학습한다'가 목표다. 자세가 흔들리는 무게는 즉시 내린다."
+      "desc": "초보자는 부상 위험이 크고, 체중이 많이 나갈수록 관절 부담이 더 크다. 처음 4주는 '무게를 든다'가 아니라 '정확한 패턴을 학습한다'가 목표다. 자세가 흔들리는 무게는 즉시 내린다."
     },
     {
-      "name": "감량은 식단 70%",
-      "desc": "30kg 감량의 핵심은 칼로리 적자다. 한식 기준 흰쌀밥은 반공기로 줄이고 잡곡밥으로 대체, 국물은 적게, 튀김·전·삼겹살 빈도를 줄이고 닭가슴살·두부·생선·나물·김치(저염)를 늘린다. 체중 1kg당 단백질 1.6~2.0g(약 130~180g/일)을 목표로 한다."
+      "name": "체중관리는 식단 70%",
+      "desc": "체중 변화의 핵심은 칼로리 수지다 — 감량은 적자, 유지는 균형, 증량은 흑자. 한식 기준 흰쌀밥·국물·튀김·전·삼겹살의 칼로리를 의식해 목표에 맞게 양을 조절하고, 닭가슴살·두부·생선·나물·김치(저염) 같은 고단백·저열량 식품을 늘린다. 체중 1kg당 단백질 1.6~2.0g을 목표로 한다."
     },
     {
       "name": "저충격 유산소 병행",
@@ -149,7 +149,7 @@ const STRENGTH = {
                 "가슴이 손 높이까지 내려오게 천천히 내리고 밀어 올린다"
               ],
               "progression": "높은 벽에서 시작해 12회가 쉬워지면 점점 낮은 지지대(벤치→낮은 박스)로 난이도를 올린다.",
-              "caution": "고체중이라 손목·어깨 부담이 크니 바닥 푸시업은 아직 하지 않는다."
+              "caution": "체중 부하가 크면 손목·어깨 부담이 크니 바닥 푸시업은 자세가 익을 때까지 미룬다."
             },
             {
               "name": "덤벨 라잉 트라이셉스 익스텐션",
@@ -1208,7 +1208,7 @@ const STRENGTH = {
                 "허벅지 평행 부근까지(통증 없는 깊이) 내리고 발 전체로 밀어 일어선다"
               ],
               "progression": "10회 2세트 성공 시 2.5~5kg 증량. 반드시 세이프티 바를 건 파워랙에서 한다.",
-              "caution": "고체중자는 무릎·허리 부담이 크므로 반드시 세이프티 바 설치, 깊이는 통증 없는 범위로 제한. 무릎이 안으로 무너지지 않게 주의."
+              "caution": "체중이 많이 나갈수록 무릎·허리 부담이 크므로 반드시 세이프티 바 설치, 깊이는 통증 없는 범위로 제한. 무릎이 안으로 무너지지 않게 주의."
             },
             {
               "name": "바벨 루마니안 데드리프트",
@@ -1399,7 +1399,7 @@ const STRENGTH = {
                 "몸은 일직선, 코어 고정"
               ],
               "progression": "맨몸 12회가 쉬우면 어시스트 줄이기 또는 가중. 아직 어려우면 어시스트 딥 머신으로.",
-              "caution": "고체중이라 정자세 딥이 어깨에 부담될 수 있음. 어시스트 머신/벤치 딥부터 단계적으로."
+              "caution": "체중 부하가 크면 정자세 딥이 어깨에 부담될 수 있음. 어시스트 머신/벤치 딥부터 단계적으로."
             },
             {
               "name": "케이블 트라이셉스 푸시다운",
@@ -1445,11 +1445,11 @@ const STRENGTH = {
   "cautions": [
     {
       "topic": "무릎 보호 (최우선)",
-      "detail": "고체중 상태에서 깊은 스쿼트·런지·점프 동작은 무릎 연골에 큰 부담을 준다. 초기엔 박스 스쿼트와 레그 프레스로 가동범위를 제한하고, 점프·플라이오메트릭(점프 스쿼트, 박스 점프)은 체중이 충분히 빠질 때까지 하지 않는다."
+      "detail": "체중이 많이 나가는 상태에서 깊은 스쿼트·런지·점프 동작은 무릎 연골에 큰 부담을 준다. 초기엔 박스 스쿼트와 레그 프레스로 가동범위를 제한하고, 점프·플라이오메트릭(점프 스쿼트, 박스 점프)은 관절이 충분히 적응할 때까지 하지 않는다."
     },
     {
       "topic": "저충격 유산소만",
-      "detail": "유산소는 러닝·줄넘기 대신 실내자전거·일립티컬·경사 걷기·수영처럼 무릎 충격이 적은 종목을 선택한다. 체중이 줄면 점차 러닝을 도입한다."
+      "detail": "유산소는 러닝·줄넘기 대신 실내자전거·일립티컬·경사 걷기·수영처럼 무릎 충격이 적은 종목을 선택한다. 관절과 체력이 적응하면 점차 러닝을 도입한다."
     },
     {
       "topic": "허리 보호",
@@ -1469,7 +1469,7 @@ const STRENGTH = {
     },
     {
       "topic": "혈압·어지럼증",
-      "detail": "고체중자는 고혈압 동반이 잦다. 무게를 들 때 숨을 참고 끙끙대는(과도한 발살바) 습관을 피하고, 들 때 내쉬고 내릴 때 들이쉰다. 일어설 때 어지럽거나 가슴 통증·심한 두근거림이 있으면 즉시 중단하고 의사와 상담한다."
+      "detail": "체중이 많이 나가면 고혈압 동반이 잦다. 무게를 들 때 숨을 참고 끙끙대는(과도한 발살바) 습관을 피하고, 들 때 내쉬고 내릴 때 들이쉰다. 일어설 때 어지럽거나 가슴 통증·심한 두근거림이 있으면 즉시 중단하고 의사와 상담한다."
     },
     {
       "topic": "관절 통증 신호",
@@ -1477,7 +1477,7 @@ const STRENGTH = {
     },
     {
       "topic": "운동 시작 전 건강 확인",
-      "detail": "30kg 감량이 필요한 고체중 상태라면 시작 전 기본 건강검진(혈압·혈당·관절)을 권장한다. 무릎·허리에 기존 질환이 있으면 전문의·물리치료사와 종목을 조정한다."
+      "detail": "체중이 많이 나가거나 기저질환이 의심되면 시작 전 기본 건강검진(혈압·혈당·관절)을 권장한다. 무릎·허리에 기존 질환이 있으면 전문의·물리치료사와 종목을 조정한다."
     }
   ]
 };
@@ -1486,20 +1486,20 @@ const CARDIO = {
     {
       "name": "경사 걷기(트레드밀 incline walk)",
       "impact": "매우 낮음",
-      "pros": "무릎 충격이 거의 없고 113kg 고체중자에게 가장 안전. 경사(3~8%)로 속도를 높이지 않아도 심박을 Zone2로 올릴 수 있어 관절 부담 없이 칼로리 소모 큼. 난간 잡지 않고 자연스러운 보행 자세 유지 가능. 초보자 진입장벽 낮음.",
+      "pros": "무릎 충격이 거의 없어 체중이 많이 나가는 초보자에게 가장 안전. 경사(3~8%)로 속도를 높이지 않아도 심박을 Zone2로 올릴 수 있어 관절 부담 없이 칼로리 소모 큼. 난간 잡지 않고 자연스러운 보행 자세 유지 가능. 초보자 진입장벽 낮음.",
       "cons": "평지 걷기보다 종아리/아킬레스 자극이 커 처음엔 발목·발바닥 통증 가능(족저근막염 주의). 장시간 시 지루함. 속도를 높이면(빠른 걷기→달리기) 충격 급증하므로 속도 대신 경사로만 강도 조절해야 함."
     },
     {
       "name": "실내자전거(고정/리컴번트)",
       "impact": "매우 낮음",
-      "pros": "체중이 안장에 실려 무릎 체중부하가 거의 없음. 리컴번트(등받이형)는 허리·무릎 부담이 더 적어 고체중 초보 최적. 강도 조절(저항) 정밀하고 날씨 무관. HIIT 전환 시에도 충격 없이 강도만 올릴 수 있음.",
+      "pros": "체중이 안장에 실려 무릎 체중부하가 거의 없음. 리컴번트(등받이형)는 허리·무릎 부담이 더 적어 체중이 많이 나가는 초보에 최적. 강도 조절(저항) 정밀하고 날씨 무관. HIIT 전환 시에도 충격 없이 강도만 올릴 수 있음.",
       "cons": "안장 불편감(초기 엉덩이 통증), 안장 높이가 낮으면 오히려 무릎 앞쪽 통증 유발(안장은 다리 거의 펴질 높이로). 상체·전신 동원이 적어 같은 시간 대비 소모가 걷기보다 낮을 수 있음."
     },
     {
       "name": "일립티컬(엘립티컬)",
       "impact": "낮음",
       "pros": "발이 페달에서 떨어지지 않아 착지 충격(impact)이 0에 가까움. 상·하체 동시 사용으로 심박을 빠르게 올리고 시간당 소모 높음. 걷기보다 무릎 굴곡 부담 적음.",
-      "cons": "기구에 따라 보폭·동작이 맞지 않으면 무릎/고관절 어색함. 균형·동작 학습 필요. 일부 기종은 발 저림 발생. 고체중자는 안정적인 상용 기종 권장."
+      "cons": "기구에 따라 보폭·동작이 맞지 않으면 무릎/고관절 어색함. 균형·동작 학습 필요. 일부 기종은 발 저림 발생. 체중이 많이 나가면 안정적인 상용 기종 권장."
     },
     {
       "name": "로잉(실내 조정)",
@@ -1510,8 +1510,8 @@ const CARDIO = {
     {
       "name": "수영/아쿠아로빅",
       "impact": "무충격(제로)",
-      "pros": "부력으로 관절 체중부하 사실상 0, 무릎 통증자에게 가장 안전한 회복·유산소. 전신 운동에 체온조절 좋아 고체중자 과열 위험 적음. 아쿠아워킹은 수영 못해도 가능.",
-      "cons": "접근성(수영장 이동·시간) 제약, 수영 기술 없으면 심박 유지 어려움. 염소·준비시간 번거로움. 체중감량 직접 효과는 식단·총활동량 대비 과대평가 주의(끝나고 식욕 증가 경향)."
+      "pros": "부력으로 관절 체중부하 사실상 0, 무릎 통증자에게 가장 안전한 회복·유산소. 전신 운동에 체온조절 좋아 과열 위험 적음. 아쿠아워킹은 수영 못해도 가능.",
+      "cons": "접근성(수영장 이동·시간) 제약, 수영 기술 없으면 심박 유지 어려움. 염소·준비시간 번거로움. 칼로리 소모 직접 효과는 식단·총활동량 대비 과대평가 주의(끝나고 식욕 증가 경향)."
     }
   ],
   "heartRate": {
@@ -1525,7 +1525,7 @@ const CARDIO = {
       {
         "zone": "Zone2 (유산소 기초, 60-70%)",
         "bpm": "114-133",
-        "use": "지방대사·기초 심폐 형성의 핵심 구간. 1~4주 모든 유산소는 여기. '대화 가능하지만 노래는 힘든' 강도. 감량의 주력 존."
+        "use": "지방대사·기초 심폐 형성의 핵심 구간. 1~4주 모든 유산소는 여기. '대화 가능하지만 노래는 힘든' 강도. 지방대사 주력 존."
       },
       {
         "zone": "Zone3 (템포, 70-80%)",
@@ -1540,7 +1540,7 @@ const CARDIO = {
       {
         "zone": "Zone5 (최대, 90-100%)",
         "bpm": "171-190",
-        "use": "고체중 초보 단계에서는 사용 금지/지양. 관절·심혈관 부담 큼, 장기적으로도 거의 불필요."
+        "use": "초보 단계, 특히 체중 부하가 클 때는 사용 금지/지양. 관절·심혈관 부담 큼, 장기적으로도 거의 불필요."
       }
     ],
     "note": "maxHR은 220-나이=190(추정치). 개인차 ±10~12bpm. 가능하면 워치/체스트스트랩으로 실측 보정. 약 복용·카페인은 심박에 영향."
@@ -1803,7 +1803,7 @@ const DIET = {
       "serving": "1팩(300g)",
       "kcal": 110,
       "protein": 10,
-      "tip": "찌개 주문 시 계란 빼달라고 요청"
+      "tip": "찌개·국으로 데워 먹기 간편, 단백질 보충에 좋음"
     },
     {
       "name": "연어구이",
@@ -1913,7 +1913,7 @@ const DIET = {
       "serving": "1줄",
       "kcal": 480,
       "protein": 12,
-      "tip": "계란 빼고 참치·야채로, 절반만"
+      "tip": "참치·야채 위주로, 절반만 먹기"
     },
     {
       "name": "김치찌개",
@@ -1937,10 +1937,10 @@ const DIET = {
     },
     {
       "name": "비빔밥",
-      "serving": "1그릇(계란 제외)",
+      "serving": "1그릇",
       "kcal": 550,
       "protein": 16,
-      "tip": "고추장·참기름 적게, 계란 빼고 주문"
+      "tip": "고추장·참기름 적게, 밥 양 줄이기"
     },
     {
       "name": "물냉면",
@@ -2087,33 +2087,33 @@ const DIET = {
     }
   ],
   "generalRules": [
-    "단백질 우선: 매 끼니 손바닥 1~2개 분량의 단백질(닭가슴살·두부·생선·살코기·유제품)을 먼저 채운다. 하루 목표 160~180g, 부족하면 프로틴 셰이크로 보충(계란은 사용하지 않음).",
+    "단백질 우선: 매 끼니 손바닥 1~2개 분량의 단백질(닭가슴살·두부·생선·살코기·달걀·유제품)을 먼저 채운다. 하루 목표는 체중 1kg당 약 1.6~2.0g, 부족하면 프로틴 셰이크로 보충한다.",
     "식사 순서 지키기: 물 → 채소·국 → 단백질 → 탄수화물 순으로 먹어 혈당 급상승과 과식을 막는다.",
     "탄수화물은 정제→복합으로: 흰밥·면·빵을 줄이고 현미·잡곡·고구마로 바꾸며 밥은 반공기를 기준으로 한다.",
     "가공식품·당 줄이기: 가당음료·과자·디저트를 끊고 라벨의 당·액상과당을 확인하며 음료는 물·아메리카노·제로로 대체한다.",
     "술 최소화: 회식에서도 1~2잔으로 제한한다. 술은 자체 칼로리가 높고 다음 날 식욕·폭식을 유발한다.",
-    "관절 보호와 회복: 고체중 초보자는 무릎 충격이 적은 운동(걷기·실내자전거·수영·상체 위주 근력)부터 시작하고, 하루 물 2L 이상 마시며 주 0.5~1kg의 완만한 감량을 목표로 한다."
+    "관절 보호와 회복: 초보자는 무릎 충격이 적은 운동(걷기·실내자전거·수영·상체 위주 근력)부터 시작하고, 하루 물 2L 이상 마시며 체중은 주 1% 이내로 완만하게 변화시킨다."
   ]
 };
 const EDUCATION = {
   "lessons": [
     {
-      "title": "왜 근손실 방지가 다이어트의 핵심인가",
+      "title": "왜 근손실 방지가 체중 관리의 핵심인가",
       "icon": "💪",
-      "summary": "굶기만 하면 지방과 함께 근육도 빠져 기초대사량이 떨어지고, 결국 같은 양을 먹어도 살이 찌는 몸이 됩니다. 근육은 가만히 있어도 칼로리를 태우는 엔진이라, 30kg을 빼는 긴 여정에서 근육을 지키는 것이 요요를 막는 가장 확실한 보험입니다.",
+      "summary": "굶기만 하면 지방과 함께 근육도 빠져 기초대사량이 떨어지고, 결국 같은 양을 먹어도 살이 찌는 몸이 됩니다. 근육은 가만히 있어도 칼로리를 태우는 엔진이라, 체중을 바꾸는 긴 여정에서 근육을 지키는 것이 요요를 막는 가장 확실한 보험입니다.",
       "points": [
-        "극단적 단식 대신 하루 약 300~500kcal만 적자(목표 체중 기준 완만한 감량)로 천천히 줄인다",
-        "주 4회 근력운동으로 '살을 빼는 동안에도 근육에 자극'을 준다",
+        "극단적 단식·폭식 대신 목표에 맞춰 하루 약 300~500kcal 범위에서 완만하게 조절한다(감량은 적자, 증량은 흑자)",
+        "주 4회 근력운동으로 '체중이 변하는 동안에도 근육에 자극'을 준다",
         "체중계 숫자보다 거울·허리둘레·옷핏으로 체성분 변화를 함께 본다"
       ]
     },
     {
       "title": "단백질, 포만감과 근육을 동시에 잡는 무기",
       "icon": "🍗",
-      "summary": "단백질은 근육의 재료이자 소화에 에너지를 많이 써서 같은 칼로리라도 살이 덜 찌고 더 오래 배부릅니다. 체중이 줄어드는 시기일수록 단백질 섭취를 충분히 해야 근육 손실을 막을 수 있습니다.",
+      "summary": "단백질은 근육의 재료이자 소화에 에너지를 많이 써서 같은 칼로리라도 살이 덜 찌고 더 오래 배부릅니다. 체중을 관리하는 시기에는 단백질 섭취를 충분히 해야 근육 손실을 막을 수 있습니다.",
       "points": [
-        "하루 목표 체중(83kg) 기준 약 130~160g, 끼니마다 손바닥 크기 단백질을 채운다",
-        "계란을 안 먹는 만큼 닭가슴살·생선·두부·콩·그릭요거트·살코기로 분산한다",
+        "목표 체중 1kg당 약 1.6~2.0g, 끼니마다 손바닥 크기 단백질을 채운다",
+        "닭가슴살·생선·두부·콩·달걀·그릭요거트·살코기 등으로 단백질원을 다양하게 분산한다",
         "아침 단백질을 챙기면 하루 식욕과 군것질이 눈에 띄게 줄어든다"
       ]
     },
@@ -2148,9 +2148,9 @@ const EDUCATION = {
       ]
     },
     {
-      "title": "부상 예방과 워밍업, 고체중일수록 필수",
+      "title": "부상 예방과 워밍업, 무게보다 우선",
       "icon": "🦵",
-      "summary": "113kg의 체중은 무릎·발목·허리 관절에 큰 부담을 주므로 초반 부상은 운동을 통째로 멈추게 만드는 가장 큰 적입니다. 가벼운 워밍업과 올바른 자세가 무게나 횟수보다 우선입니다.",
+      "summary": "체중이 많이 나갈수록 무릎·발목·허리 관절 부담이 커지고, 초반 부상은 운동을 통째로 멈추게 만드는 가장 큰 적입니다. 가벼운 워밍업과 올바른 자세가 무게나 횟수보다 우선입니다.",
       "points": [
         "운동 전 5~10분 가벼운 유산소와 관절 돌리기로 몸을 데운다",
         "유산소는 달리기 대신 빠르게 걷기·실내자전거·수영 등 무릎 충격이 적은 종목을 택한다",
@@ -2160,7 +2160,7 @@ const EDUCATION = {
     {
       "title": "술과 음료, 눈에 안 보이는 칼로리 폭탄",
       "icon": "🍺",
-      "summary": "술은 그 자체 칼로리도 높지만 지방 연소를 우선순위에서 밀어내고 안주·야식으로 이어져 하루 노력을 한 번에 무너뜨립니다. 액체 칼로리는 포만감이 거의 없어 가장 빼기 쉬운 칼로리이기도 합니다.",
+      "summary": "술은 그 자체 칼로리도 높지만 지방 연소를 우선순위에서 밀어내고 안주·야식으로 이어져 하루 노력을 한 번에 무너뜨립니다. 액체 칼로리는 포만감이 거의 없어 가장 줄이기 쉬운 칼로리이기도 합니다.",
       "points": [
         "소주 1병은 밥 두 공기 수준임을 기억하고 술자리 빈도를 먼저 줄인다",
         "탄산음료·과일주스·믹스커피 대신 물·탄산수·블랙커피로 바꾼다",
@@ -2170,7 +2170,7 @@ const EDUCATION = {
     {
       "title": "완벽보다 꾸준함이 이긴다",
       "icon": "🔁",
-      "summary": "하루 과식했다고 다이어트가 끝나는 게 아니라, 그 다음 끼니에서 다시 평소대로 돌아오면 됩니다. 6개월~1년의 장기전에서는 100점짜리 3일보다 70점짜리 300일이 훨씬 큰 결과를 만듭니다.",
+      "summary": "하루 과식했다고 식단 관리가 끝나는 게 아니라, 그 다음 끼니에서 다시 평소대로 돌아오면 됩니다. 6개월~1년의 장기전에서는 100점짜리 3일보다 70점짜리 300일이 훨씬 큰 결과를 만듭니다.",
       "points": [
         "'올 오어 낫싱'을 버리고 한 끼 실수는 다음 끼니로 리셋한다",
         "운동 가기 싫은 날은 '10분만'이라는 최소 기준으로 일단 시작한다",
@@ -2227,55 +2227,14 @@ const EDUCATION = {
   ],
   "mindset": [
     "숫자가 멈춰도 '과정'은 쌓이고 있다 — 추세를 믿고 하루 변동에 흔들리지 말 것",
-    "'왜 빼려는가'(건강·무릎·자신감)를 적어 잘 보이는 곳에 붙여둔다",
+    "'왜 시작했는가'(건강·무릎·자신감)를 적어 잘 보이는 곳에 붙여둔다",
     "의지력에 기대지 말고 환경을 바꾼다 — 집에 군것질 안 두고, 운동복 미리 꺼내두기",
-    "한 번의 실수로 자책하지 말 것, 다음 한 끼가 진짜 다이어트다",
-    "30kg을 한 번에 보지 말고 '이번 주 -0.5kg'처럼 눈앞의 작은 목표에만 집중한다"
-  ],
-  "milestones": [
-    {
-      "weight": 108,
-      "label": "-5kg 첫 5kg 돌파",
-      "expect": "초반 수분과 부기가 빠지며 몸이 가벼워지고, 무릎·발 부담이 줄어 걷기가 편해진다. 운동 루틴에 적응되는 시기."
-    },
-    {
-      "weight": 103,
-      "label": "-10kg 두 자리 감량",
-      "expect": "바지 허리가 눈에 띄게 헐거워지고 계단·산책 시 숨이 덜 찬다. 체력과 수면의 질이 좋아지는 게 느껴진다."
-    },
-    {
-      "weight": 98,
-      "label": "-15kg 90킬로대 진입",
-      "expect": "얼굴·목선이 또렷해지고 코골이·피로감이 줄어든다. 근력운동 중량이 오르며 '몸이 단단해진다'는 감각이 생긴다."
-    },
-    {
-      "weight": 93,
-      "label": "-20kg 여정의 3분의 2",
-      "expect": "무릎·허리 통증이 크게 줄고 활동량이 자연스럽게 늘어난다. 혈압·혈당 등 건강 지표 개선을 기대할 수 있는 구간."
-    },
-    {
-      "weight": 88,
-      "label": "-25kg 마지막 구간 진입",
-      "expect": "체지방이 빠지며 근육 라인이 보이기 시작하고 옷 사이즈가 확연히 바뀐다. 정체기가 올 수 있으니 활동량·강도를 점검할 시기."
-    },
-    {
-      "weight": 83,
-      "label": "-30kg 목표 달성",
-      "expect": "키 188cm에 어울리는 건강 체중에 도달. 이제 '빼기'에서 '유지'로 전환해, 지금의 식습관·주 4회 운동을 라이프스타일로 굳히는 단계."
-    }
+    "한 번의 실수로 자책하지 말 것, 다음 한 끼가 진짜 식단 관리다",
+    "전체 목표를 한 번에 보지 말고 '이번 주 작은 한 걸음'처럼 눈앞의 작은 목표에만 집중한다"
   ]
 };
 
 const NUTRITION = {
-  timeline: {
-    phases: [
-      { range: "113→100kg (초기)", weeklyRateKg: "0.9~1.2", note: "글리코겐·수분 빠짐과 높은 기초대사로 감량이 빠른 구간. 1% 미만 주간 변동은 대부분 수분." },
-      { range: "100→90kg (중기)", weeklyRateKg: "0.6~0.8", note: "체중이 줄며 TDEE 하락. 5~7kg 빠질 때마다 칼로리 재계산." },
-      { range: "90→83kg (후기)", weeklyRateKg: "0.4~0.5", note: "근육 보존·관절 보호를 위해 천천히. 근력 강도를 유지해 제지방을 지킨다." },
-    ],
-    estimatedDurationMonths: "9~12",
-    dietBreak: { frequency: "8~12주 다이어트 후 1~2주", method: "섭취칼로리를 유지(TDEE) 수준으로 상향, 단백질은 그대로. 대사적응 완화·렙틴 정상화. 폭식이 아니라 '계획된 유지'." },
-  },
   plateau: [
     { method: "칼로리 재계산 및 소폭 하향", detail: "체중이 5~7kg 줄 때마다 TDEE가 떨어진다. 1주 평균이 2~3주간 그대로면 섭취 100~150kcal 감량, 또는 걸음수 1,500~2,000보 추가." },
     { method: "활동·운동 변수 조정", detail: "같은 운동에 몸이 적응한다. 근력 볼륨/중량을 늘리고, 유산소는 시간보다 강도(인터벌)·빈도를 바꾼다. 단 관절 보호 위해 저충격 위주." },
@@ -2307,18 +2266,155 @@ function useLocal(key, initial) {
   return [val, setVal];
 }
 
-// 영양 계산 (Mifflin-St Jeor, 남성)
+// 영양 계산 (Mifflin-St Jeor, 성별·목표 반영)
 function computeNutrition(p) {
-  const bmr = Math.round(10 * p.weight + 6.25 * p.height - 5 * p.age + 5);
-  const tdee = Math.round(bmr * p.activity);
-  const target = clamp(round(tdee - 550, 10), 1800, tdee);
-  const protein = clamp(Math.round(p.goalWeight * 2.0), 150, 190);
-  const fat = Math.max(60, Math.round(p.goalWeight * 0.85));
+  const num = (v, d) => { const n = Number(v); return Number.isFinite(n) && n > 0 ? n : d; };
+  const sex = (p && p.sex === "female") ? "female" : "male";
+  const goal = (p && (p.goal === "maintain" || p.goal === "gain")) ? p.goal : "cut"; // 기본 감량
+  const weight = clamp(num(p && p.weight, 70), 30, 400);
+  const height = clamp(num(p && p.height, 170), 100, 250);
+  const age = clamp(num(p && p.age, 30), 14, 100);
+  const activity = clamp(num(p && p.activity, 1.375), 1.2, 1.9);
+  const basisW = clamp(num(p && p.goalWeight, weight), 30, 400); // 단백/지방 기준(목표체중 우선)
+
+  const bmr = Math.round(10 * weight + 6.25 * height - 5 * age + (sex === "female" ? -161 : 5));
+  const tdee = Math.round(bmr * activity);
+
+  let target;
+  if (goal === "maintain") {
+    target = tdee;
+  } else if (goal === "gain") {
+    target = tdee + Math.min(500, Math.round(tdee * 0.125));
+  } else {
+    const floor = Math.max(sex === "female" ? 1200 : 1500, Math.round(bmr * 1.1));
+    target = Math.max(Math.round(tdee * 0.825), floor);
+  }
+  target = Math.round(round(target, 10));
+
+  const proteinPerKg = goal === "maintain" ? 1.6 : 2.0;
+  const protein = Math.max(0, Math.round(basisW * proteinPerKg));
+  const fat = Math.max(0, Math.round(basisW * 0.8));
   const carbs = Math.max(0, Math.round((target - protein * 4 - fat * 9) / 4));
-  const maxHR = 220 - p.age;
-  const zoneDefs = [["Zone1 회복",50,60,"준비·정리운동, 활동적 회복"],["Zone2 유산소 기초",60,70,"지방대사·기초 심폐. 감량 주력(대화O 노래X)"],["Zone3 템포",70,80,"체력 향상 후 일부 세션(약간 숨참)"],["Zone4 인터벌",80,90,"13주+ HIIT, 저충격 기구에서만"],["Zone5 최대",90,100,"고체중 초보 단계 지양"]];
+
+  const maxHR = 220 - age;
+  const zoneDefs = [["Zone1 회복",50,60,"준비·정리운동, 활동적 회복"],["Zone2 유산소 기초",60,70,"지방대사·기초 심폐. 지방대사 주력(대화O 노래X)"],["Zone3 템포",70,80,"체력 향상 후 일부 세션(약간 숨참)"],["Zone4 인터벌",80,90,"13주+ HIIT, 저충격 기구에서만"],["Zone5 최대",90,100,"초보·고부하 단계 지양"]];
   const zones = zoneDefs.map(([name, lo, hi, use]) => ({ name, lo: Math.round(maxHR*lo/100), hi: Math.round(maxHR*hi/100), use }));
   return { bmr, tdee, target, protein, fat, carbs, maxHR, zones };
+}
+
+// 마일스톤 (목표별 동적 생성) — startWeight/goalWeight/goal 기반
+function computeMilestones(profile) {
+  const start = profile.startWeight, goal = profile.goalWeight, g = profile.goal;
+  const diff = Math.abs(start - goal);
+  if (g === "maintain" || diff < 2) {
+    return [
+      { weeks: 2,  weight: null, label: "2주 · 루틴 안착",     expect: "주 4회 운동·식사 시간이 일정해지고 매일 체중 기록이 습관이 된다. 컨디션 기복이 줄어드는 시기." },
+      { weeks: 4,  weight: null, label: "4주 · 체성분 변화",   expect: "체중은 거의 그대로지만 허리둘레·옷핏이 미세하게 달라진다. 같은 칼로리에서 근육이 늘고 지방이 줄기 시작." },
+      { weeks: 8,  weight: null, label: "8주 · 근력 상승",     expect: "주요 종목 중량이 눈에 띄게 오르고 같은 무게가 가벼워진다. 거울로 보이는 라인이 또렷해진다." },
+      { weeks: 12, weight: null, label: "12주 · 습관 고착",    expect: "건강한 식습관·운동이 의지가 아닌 '기본값'이 된다. 외식·회식 후에도 빠르게 루틴으로 복귀." },
+      { weeks: 24, weight: null, label: "24주 · 라이프스타일", expect: "체중 유지가 자연스러워지고 체성분이 한 단계 좋아진다. 이제 수행능력·컨디션 중심으로 목표를 재설정." },
+    ];
+  }
+  const dir = goal < start ? -1 : 1;
+  const steps = clamp(Math.round(diff / 5), 4, 5);
+  const stepKg = diff / steps;
+  const cutExpect = [
+    "초반 수분과 부기가 빠지며 몸이 가벼워지고, 무릎·발 부담이 줄어 걷기가 편해진다. 운동 루틴에 적응되는 시기.",
+    "바지 허리가 눈에 띄게 헐거워지고 계단·산책 시 숨이 덜 찬다. 체력과 수면의 질이 좋아지는 게 느껴진다.",
+    "얼굴·목선이 또렷해지고 근력운동 중량이 오르며 '몸이 단단해진다'는 감각이 생긴다.",
+    "체지방이 빠지며 근육 라인이 보이기 시작하고 옷 사이즈가 확연히 바뀐다. 정체기가 올 수 있으니 활동량·강도를 점검할 시기.",
+    "목표 구간에 근접. 마지막은 천천히 — 근력 강도를 유지해 제지방을 지키며 마무리한다.",
+  ];
+  const gainExpect = [
+    "식사량·운동 볼륨에 적응하는 시기. 소화·식욕이 늘고 트레이닝 후 회복이 빨라진다.",
+    "주요 종목 중량과 반복수가 오르고 펌핑·근육감이 또렷해진다. 체중이 꾸준히 우상향.",
+    "어깨·가슴·팔 둘레가 눈에 띄게 커지고 옷의 핏이 달라진다. 단백질·총칼로리 재점검 시기.",
+    "전반적인 근육량이 늘며 힘이 강해진다. 체지방이 과하게 늘지 않도록 증량 속도를 점검.",
+    "목표 체중 구간 도달. 이제 클린 벌크 유지 또는 린매스 정리 단계로 전환을 고려.",
+  ];
+  const pool = dir < 0 ? cutExpect : gainExpect;
+  const out = [];
+  for (let i = 1; i <= steps; i++) {
+    const last = i === steps;
+    const w = round(start + dir * stepKg * i, 0.5);
+    const wEnd = last ? goal : w;
+    const delta = Math.round(Math.abs(start - wEnd));
+    const label = last
+      ? `${dir < 0 ? "-" : "+"}${delta}kg 목표 달성`
+      : `${dir < 0 ? "-" : "+"}${delta}kg ${dir < 0 ? "감량" : "증량"}`;
+    const ei = Math.round((i - 1) / (steps - 1) * (pool.length - 1));
+    out.push({
+      weight: wEnd,
+      label,
+      expect: last
+        ? `목표 체중 ${goal}kg 도달. ${dir < 0 ? "이제 '빼기'에서 '유지'로 전환해 지금의 식습관·주 4회 운동을 라이프스타일로 굳히는 단계." : "이제 증량을 멈추고 체성분 정리·유지 단계로 전환하는 시기."}`
+        : pool[ei],
+    });
+  }
+  return out;
+}
+function milestoneReached(m, profile, cur) {
+  if (m.weight == null) {
+    const wks = profile.startDate ? daysBetween(profile.startDate, todayKey()) / 7 : 0;
+    return wks >= m.weeks;
+  }
+  return profile.goal === "gain" ? cur >= m.weight : cur <= m.weight;
+}
+function nextMilestone(list, profile, cur) {
+  return list.find((m) => !milestoneReached(m, profile, cur)) || list[list.length - 1];
+}
+
+// 예상 타임라인 (목표별 동적)
+function computeTimeline(profile) {
+  const start = profile.startWeight, goal = profile.goalWeight, g = profile.goal;
+  const diff = Math.abs(start - goal);
+  if (g === "maintain" || diff < 2) {
+    return {
+      phases: [
+        { range: "0~4주 · 적응",    weeklyRateKg: "±0.2", note: "현재 체중 유지(TDEE 섭취). 운동 폼·루틴을 정착시키고 주 4회 출석률을 100%로." },
+        { range: "4~12주 · 근비대", weeklyRateKg: "+0.1", note: "약한 잉여(+5~10%)로 제지방 위주 증가. 주요 종목 점진적 과부하에 집중." },
+        { range: "12주+ · 재설계",  weeklyRateKg: "±0.2", note: "체성분·수행능력을 보고 컷/벌크 미니사이클로 재설정. 컨디션 우선." },
+      ],
+      estimatedDurationMonths: "지속(상시)",
+      dietBreak: { frequency: "8~12주마다 1주", method: "강도·볼륨을 낮추는 디로드 주간으로 관절·신경을 회복. 섭취·단백질은 유지." },
+    };
+  }
+  const cut = goal < start;
+  const w0 = start;
+  const w1 = start + (cut ? -diff * 0.45 : diff * 0.45);
+  const w2 = start + (cut ? -diff * 0.78 : diff * 0.78);
+  const w3 = goal;
+  const fmt = (a, b) => `${Math.round(a)}→${Math.round(b)}kg`;
+  let phases, totalWeeksLo, totalWeeksHi;
+  if (cut) {
+    const r = (w) => ({ lo: round(w * 0.005, 0.1), hi: round(w * 0.01, 0.1) });
+    const p0 = r((w0 + w1) / 2), p1 = r((w1 + w2) / 2), p2 = r((w2 + w3) / 2);
+    phases = [
+      { range: fmt(w0, w1) + " (초기)", weeklyRateKg: `${p0.lo}~${p0.hi}`, note: "글리코겐·수분이 빠지며 감량이 가장 빠른 구간. 1% 미만 주간 변동은 대부분 수분." },
+      { range: fmt(w1, w2) + " (중기)", weeklyRateKg: `${p1.lo}~${p1.hi}`, note: "체중이 줄며 TDEE 하락. 5~7kg 빠질 때마다 칼로리를 재계산한다." },
+      { range: fmt(w2, w3) + " (후기)", weeklyRateKg: `${p2.lo}~${p2.hi}`, note: "근육 보존·관절 보호를 위해 천천히. 근력 강도를 유지해 제지방을 지킨다." },
+    ];
+    const avg = (w0 + w3) / 2;
+    totalWeeksLo = diff / (avg * 0.01);
+    totalWeeksHi = diff / (avg * 0.005);
+  } else {
+    phases = [
+      { range: fmt(w0, w1) + " (초기)", weeklyRateKg: "+0.3~0.4",  note: "초보 적응기엔 근성장·증량이 비교적 빠르다. 단백질·총칼로리를 충분히 확보." },
+      { range: fmt(w1, w2) + " (중기)", weeklyRateKg: "+0.2~0.3",  note: "체중이 늘며 유지칼로리 상승. 5kg 늘 때마다 섭취를 재계산한다." },
+      { range: fmt(w2, w3) + " (후기)", weeklyRateKg: "+0.15~0.25", note: "지방 증가를 억제하기 위해 천천히. 과부하 원칙으로 근자극을 유지한다." },
+    ];
+    totalWeeksLo = diff / 0.4;
+    totalWeeksHi = diff / 0.2;
+  }
+  const moLo = Math.max(1, Math.round(totalWeeksLo / 4.3));
+  const moHi = Math.max(moLo, Math.round(totalWeeksHi / 4.3));
+  return {
+    phases,
+    estimatedDurationMonths: moLo === moHi ? `${moLo}` : `${moLo}~${moHi}`,
+    dietBreak: cut
+      ? { frequency: "8~12주 다이어트 후 1~2주", method: "섭취칼로리를 유지(TDEE) 수준으로 상향, 단백질은 그대로. 대사적응 완화·렙틴 정상화. 폭식이 아니라 '계획된 유지'." }
+      : { frequency: "10~12주 증량 후 1~2주",  method: "유지칼로리로 낮춰 늘어난 지방을 정리(미니컷)하거나 디로드로 회복. 단백질은 유지." },
+  };
 }
 function phaseIndexForWeeks(weeks) { if (weeks < 4) return 0; if (weeks < 12) return 1; return 2; }
 function topReps(reps) { const n = String(reps).match(/\d+/g); return n ? Number(n[n.length-1]) : 12; }
@@ -2578,16 +2674,38 @@ function WeightChart({ log, start, goal, showRaw = true }) {
 }
 
 /* ============================ 온보딩 ============================ */
-function Onboarding({ onDone, onLogin }) {
+function Onboarding({ onDone }) {
   const [step, setStep] = useState(0);
-  const [p, setP] = useState({ height: 188, weight: 113, goalWeight: 83, age: 30, activity: 1.375, knee: true });
-  const nut = computeNutrition(p);
-  const months = Math.round((p.weight - p.goalWeight) / 0.7 / 4.3);
-  const field = (l, k, suf) => <label className="block text-sm"><span className="text-zinc-400">{l}</span>
+  const [p, setP] = useState({ sex: "", height: "", weight: "", goalWeight: "", age: "", activity: 1.375, goal: "", excludeEgg: false, knee: true });
+
+  const num = (v) => { const n = parseFloat(v); return isFinite(n) ? n : NaN; };
+  const h = num(p.height), w = num(p.weight), gw = num(p.goalWeight), age = num(p.age);
+  const ready = h > 0 && w > 0 && gw > 0 && age > 0;
+  const nut = ready ? computeNutrition({ ...p, height: h, weight: w, goalWeight: gw, age }) : null;
+  const canFinish = ready && !!p.sex && !!p.goal;
+
+  let goalText = "—", periodText = "—", goalBadge = null;
+  if (ready && p.goal) {
+    if (p.goal === "maintain") { goalText = `${w}kg 유지`; periodText = "꾸준히"; }
+    else if (p.goal === "cut") {
+      goalText = `${w} → ${gw}kg`;
+      const m = Math.round((w - gw) / 0.7 / 4.3);
+      periodText = (w > gw && m > 0) ? `약 ${m}개월` : "—";
+      goalBadge = <span className="text-emerald-400"> (-{Number((w - gw).toFixed(1))}kg)</span>;
+    } else {
+      goalText = `${w} → ${gw}kg`;
+      const m = Math.round((gw - w) / 0.35 / 4.3);
+      periodText = (gw > w && m > 0) ? `약 ${m}개월` : "—";
+      goalBadge = <span className="text-emerald-400"> (+{Number((gw - w).toFixed(1))}kg)</span>;
+    }
+  }
+
+  const field = (l, k, suf, ph) => <label className="block text-sm"><span className="text-zinc-400">{l}</span>
     <div className="mt-1 flex items-center rounded-xl border border-zinc-700 bg-zinc-800 px-3">
-      <input value={p[k]} onChange={(e) => setP({ ...p, [k]: parseFloat(e.target.value) || 0 })} inputMode="decimal" className="w-full bg-transparent py-2.5 text-zinc-100 outline-none" />
+      <input value={p[k]} onChange={(e) => setP({ ...p, [k]: e.target.value.replace(/[^0-9.]/g, "") })} inputMode="decimal" placeholder={ph} className="w-full bg-transparent py-2.5 text-zinc-100 outline-none placeholder:text-zinc-600" />
       {suf && <span className="text-sm text-zinc-500">{suf}</span>}
     </div></label>;
+
   return <div className="min-h-screen bg-zinc-950 px-5 py-8 text-zinc-100">
     <div className="mx-auto max-w-md">
       <div className="mb-6 flex items-center gap-2">
@@ -2599,9 +2717,20 @@ function Onboarding({ onDone, onLogin }) {
       {step === 0 && <div className="space-y-4">
         <h1 className="text-2xl font-extrabold leading-snug">반가워요 👋<br />목표부터 정해볼까요?</h1>
         <p className="text-sm text-zinc-400">정확한 칼로리·운동 강도를 계산하기 위해 필요해요.</p>
-        <div className="grid grid-cols-2 gap-3">{field("키", "height", "cm")}{field("현재 체중", "weight", "kg")}{field("목표 체중", "goalWeight", "kg")}{field("나이", "age", "세")}</div>
+
+        <div>
+          <p className="mb-1.5 text-sm text-zinc-400">성별</p>
+          <div className="grid grid-cols-2 gap-2">{[["male","남성"],["female","여성"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, sex: v })} className={cls("rounded-xl py-3 text-sm font-semibold", p.sex === v ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">{field("키", "height", "cm", "175")}{field("현재 체중", "weight", "kg", "70")}{field("목표 체중", "goalWeight", "kg", "65")}{field("나이", "age", "세", "30")}</div>
+
+        <div>
+          <p className="mb-1.5 text-sm text-zinc-400">목표</p>
+          <div className="grid grid-cols-3 gap-2">{[["cut","감량"],["maintain","유지"],["gain","증량"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, goal: v })} className={cls("rounded-xl py-3 text-sm font-semibold", p.goal === v ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+        </div>
+
         <button onClick={() => setStep(1)} className="w-full rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400">다음</button>
-        {onLogin && <button onClick={onLogin} className="w-full pt-1 text-center text-xs text-zinc-400 hover:text-zinc-200">이미 쓰던 기기가 있나요? <span className="font-semibold text-emerald-400">☁ 로그인해서 데이터 가져오기</span></button>}
       </div>}
 
       {step === 1 && <div className="space-y-4">
@@ -2612,27 +2741,34 @@ function Onboarding({ onDone, onLogin }) {
             <button onClick={() => setP({ ...p, knee: true })} className={cls("rounded-xl py-3 text-sm font-semibold", p.knee ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>네 / 걱정돼요</button>
             <button onClick={() => setP({ ...p, knee: false })} className={cls("rounded-xl py-3 text-sm font-semibold", !p.knee ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>아니요</button>
           </div>
-          <p className="mt-2 text-xs text-zinc-500">{p.weight}kg 고체중 단계에서는 무릎 보호가 매우 중요해요. 어느 쪽이든 저충격 운동과 안전한 가동범위로 시작합니다.</p>
+          <p className="mt-2 text-xs text-zinc-500">체중 부하가 큰 운동은 무릎에 부담이 될 수 있어요. 어느 쪽이든 저충격 운동과 안전한 가동범위로 시작합니다.</p>
         </Card>
         <p className="text-sm text-zinc-400">활동 수준</p>
         <div className="grid grid-cols-2 gap-2">{[[1.2,"거의 안 움직임"],[1.375,"가벼움(주1~3)"],[1.55,"보통(주3~5)"],[1.725,"활발(주6~7)"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, activity: v })} className={cls("rounded-xl px-2 py-2.5 text-xs font-semibold", p.activity === v ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+        <Card className="p-4">
+          <div className="flex items-center justify-between">
+            <div><p className="text-sm font-semibold text-zinc-200">계란 제외</p><p className="text-xs text-zinc-500">알레르기·비선호 시 식단 추천에서 계란을 빼요.</p></div>
+            <button onClick={() => setP({ ...p, excludeEgg: !p.excludeEgg })} className={cls("relative h-7 w-12 shrink-0 rounded-full transition-colors", p.excludeEgg ? "bg-emerald-500" : "bg-zinc-700")}><span className={cls("absolute top-1 h-5 w-5 rounded-full bg-white transition-all", p.excludeEgg ? "left-6" : "left-1")} /></button>
+          </div>
+        </Card>
         <div className="flex gap-2"><button onClick={() => setStep(0)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button onClick={() => setStep(2)} className="flex-1 rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400">다음</button></div>
       </div>}
 
       {step === 2 && <div className="space-y-4">
         <h1 className="text-2xl font-extrabold leading-snug">당신의 시작 플랜 ✨</h1>
         <Card className="p-4">
-          <div className="mb-3 flex items-center justify-between"><span className="text-sm text-zinc-400">목표</span><span className="font-bold text-zinc-100">{p.weight} → {p.goalWeight}kg <span className="text-emerald-400">(-{p.weight-p.goalWeight}kg)</span></span></div>
+          <div className="mb-3 flex items-center justify-between"><span className="text-sm text-zinc-400">목표</span><span className="font-bold text-zinc-100">{goalText}{goalBadge}</span></div>
           <div className="grid grid-cols-2 gap-3 text-center">
-            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">하루 목표 칼로리</p><p className="text-xl font-bold text-emerald-400">{nut.target.toLocaleString()}</p></div>
-            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">단백질</p><p className="text-xl font-bold text-emerald-400">{nut.protein}g</p></div>
-            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">예상 기간</p><p className="text-xl font-bold text-zinc-100">약 {months}개월</p></div>
+            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">하루 목표 칼로리</p><p className="text-xl font-bold text-emerald-400">{nut ? nut.target.toLocaleString() : "—"}</p></div>
+            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">단백질</p><p className="text-xl font-bold text-emerald-400">{nut ? `${nut.protein}g` : "—"}</p></div>
+            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">예상 기간</p><p className="text-xl font-bold text-zinc-100">{periodText}</p></div>
             <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">운동</p><p className="text-sm font-bold text-zinc-100">주4회 4분할</p></div>
           </div>
           <p className="mt-3 text-xs text-zinc-500">가슴+삼두 · 등+이두 · 하체 · 팔+어깨 / 저충격 유산소 병행</p>
         </Card>
-        <p className="rounded-xl bg-zinc-900 px-3 py-2.5 text-[11px] leading-relaxed text-zinc-500">⚕ 본 앱은 의료 조언이 아닌 일반 건강·운동 정보를 제공합니다. 고체중·기저질환이 있다면 운동 시작 전 의사와 상담하고, 통증 발생 시 즉시 중단하세요.</p>
-        <div className="flex gap-2"><button onClick={() => setStep(1)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button onClick={() => onDone(p)} className="flex-1 rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400">시작하기 🚀</button></div>
+        {!canFinish && <p className="rounded-xl bg-amber-500/10 px-3 py-2.5 text-[11px] leading-relaxed text-amber-300">성별·목표·키·체중·나이를 모두 입력하면 시작할 수 있어요.</p>}
+        <p className="rounded-xl bg-zinc-900 px-3 py-2.5 text-[11px] leading-relaxed text-zinc-500">⚕ 본 앱은 의료 조언이 아닌 일반 건강·운동 정보를 제공합니다. 체중이 많이 나가거나 기저질환이 있다면 운동 시작 전 의사와 상담하고, 통증 발생 시 즉시 중단하세요.</p>
+        <div className="flex gap-2"><button onClick={() => setStep(1)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button disabled={!canFinish} onClick={() => onDone({ ...p, height: h, weight: w, goalWeight: gw, age })} className="flex-1 rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400 disabled:opacity-50">시작하기 🚀</button></div>
       </div>}
     </div>
   </div>;
@@ -2798,7 +2934,7 @@ function Cardio({ nut, setTimer }) {
     <Card className="p-4">
       <SectionTitle icon="fire" sub={`최대심박 ${nut.maxHR}`}>나의 심박존</SectionTitle>
       <div className="space-y-1.5">{nut.zones.map((z, i) => <div key={i} className={cls("flex items-center justify-between rounded-lg px-3 py-2 text-sm", i===1?"bg-emerald-500/15 ring-1 ring-emerald-500/30":"bg-zinc-800/60")}><span className={cls("font-semibold", i===1?"text-emerald-300":"text-zinc-200")}>{z.name}</span><span className="tabular-nums text-zinc-300">{z.lo}–{z.hi} bpm</span></div>)}</div>
-      <p className="mt-2 text-[11px] text-zinc-500">감량 주력은 <span className="text-emerald-400">Zone2</span>. 1~4주는 전부 Zone2.</p>
+      <p className="mt-2 text-[11px] text-zinc-500">지방대사 주력은 <span className="text-emerald-400">Zone2</span>. 1~4주는 전부 Zone2.</p>
     </Card>
     <SectionTitle icon="chart">단계별 유산소 계획</SectionTitle>
     {CARDIO.phases.map((p, i) => <Collapsible key={i} title={p.period} icon="run" defaultOpen={i===0}><div className="space-y-1.5"><p><span className="text-zinc-500">빈도</span> · {p.frequency}</p><p><span className="text-zinc-500">강도</span> · {p.intensity}</p><p><span className="text-zinc-500">시간</span> · {p.duration}</p><p className="rounded-lg bg-zinc-800/60 p-2"><b className="text-emerald-300">근력과 배치</b> · {p.placement}</p></div></Collapsible>)}
@@ -2810,16 +2946,17 @@ function Cardio({ nut, setTimer }) {
 }
 
 /* ============================ 식단 탭 ============================ */
-function Diet({ nut, foodLog, setFoodLog, water, setWater }) {
+function Diet({ nut, foodLog, setFoodLog, water, setWater, excludeEgg = false, goal = "cut" }) {
   const [tab, setTab] = useState("log");
   const [q, setQ] = useState("");
   const tk = todayKey();
   const log = foodLog[tk] || [];
   const totals = log.reduce((a, f) => ({ kcal: a.kcal + f.kcal, protein: a.protein + f.protein }), { kcal: 0, protein: 0 });
-  const db = useMemo(() => DIET.foodDb.filter((f) => !hasEgg(f.name)), []);
+  const db = useMemo(() => excludeEgg ? DIET.foodDb.filter((f) => !hasEgg(f.name)) : DIET.foodDb, [excludeEgg]);
   const filtered = useMemo(() => db.filter((f) => f.name.includes(q)), [q, db]);
   const addF = (f) => setFoodLog({ ...foodLog, [tk]: [...log, { name: f.name, kcal: f.kcal, protein: f.protein, tl: trafficLight(f) }] });
   const rmF = (i) => setFoodLog({ ...foodLog, [tk]: log.filter((_, j) => j !== i) });
+  const PORTION_GUIDE = { cut: "감량 — 밥은 반공기, 단백질은 넉넉히, 기름·소스는 적게", maintain: "유지 — 밥 2/3공기, 단백질 충분히, 전체적으로 균형 있게", gain: "증량 — 밥 한 공기 이상, 단백질·간식 넉넉히 칼로리 확보" };
   const tabs = [["log","오늘 기록"],["menu","추천 식단"],["db","음식 DB"],["tips","꿀팁"]];
 
   return <div className="space-y-4">
@@ -2840,7 +2977,7 @@ function Diet({ nut, foodLog, setFoodLog, water, setWater }) {
       </div>
       <div className="mt-3 flex items-center justify-center gap-4 border-t border-zinc-800 pt-2 text-[11px]">
         {Object.entries(TL).map(([k, v]) => <span key={k} className="flex items-center gap-1 text-zinc-400"><span className={cls("h-2.5 w-2.5 rounded-full", v.dot)} />{v.label}</span>)}
-        <span className="text-zinc-600">계란 자동제외 ✓</span>
+        {excludeEgg && <span className="text-zinc-600">계란 자동제외 ✓</span>}
       </div>
     </Card>
 
@@ -2853,7 +2990,7 @@ function Diet({ nut, foodLog, setFoodLog, water, setWater }) {
       <Card className="p-4"><SectionTitle icon="water">물 ({water}/12잔)</SectionTitle><Bar value={(water/12)*100} tone="sky" /><div className="mt-2 flex gap-2"><button onClick={() => setWater(Math.max(0, water-1))} className="flex-1 rounded-lg bg-zinc-800 py-1.5 text-zinc-300">−</button><button onClick={() => setWater(water+1)} className="flex-1 rounded-lg bg-sky-500/90 py-1.5 font-bold text-zinc-950">+ 한 잔</button></div></Card>
     </div>}
 
-    {tab === "menu" && <div className="space-y-3">{DIET.sampleDays.map((d, i) => <Card key={i} className="p-4"><div className="mb-2 flex items-center justify-between"><span className="font-bold text-zinc-100">{d.day}</span><Pill tone="emerald">{d.totalKcal}kcal·P{d.totalProtein}</Pill></div><div className="space-y-2">{d.meals.map((m, j) => <div key={j} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="mb-0.5 flex items-center justify-between"><span className="text-xs font-semibold text-emerald-300">{m.type}</span><span className="text-[11px] text-zinc-500">{m.kcal}kcal·P{m.protein}</span></div><p className="text-sm text-zinc-300">{m.foods.join(" · ")}</p></div>)}</div></Card>)}
+    {tab === "menu" && <div className="space-y-3"><Card className="p-3"><div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"><span className="font-semibold text-emerald-300">🍽️ 포션 가이드</span><span className="text-zinc-300">{PORTION_GUIDE[goal] || PORTION_GUIDE.cut}</span></div></Card>{DIET.sampleDays.filter((d) => excludeEgg ? !d.meals.some((m) => m.foods.some(hasEgg)) : true).map((d, i) => <Card key={i} className="p-4"><div className="mb-2 flex items-center justify-between"><span className="font-bold text-zinc-100">{d.day}</span><Pill tone="emerald">{d.totalKcal}kcal·P{d.totalProtein}</Pill></div><div className="space-y-2">{d.meals.map((m, j) => <div key={j} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="mb-0.5 flex items-center justify-between"><span className="text-xs font-semibold text-emerald-300">{m.type}</span><span className="text-[11px] text-zinc-500">{m.kcal}kcal·P{m.protein}</span></div><p className="text-sm text-zinc-300">{m.foods.join(" · ")}</p></div>)}</div></Card>)}
       <Card className="p-4"><SectionTitle icon="water">편의점 조합</SectionTitle><ul className="space-y-1.5 text-sm text-zinc-300">{DIET.convenienceStore.map((c, i) => <li key={i}>🏪 {c}</li>)}</ul></Card>
     </div>}
 
@@ -2877,13 +3014,18 @@ function ProgressTab({ profile, weightLog, sessions, habits, setHabits, addWeigh
   const ma = sorted.length ? movingAvg(sorted) : [];
   const trendNow = ma.length ? ma[ma.length-1].avg : cur;
   const trendPrev = ma.length > 7 ? ma[ma.length-8].avg : (ma.length ? ma[0].avg : cur);
-  const paceWk = ma.length > 7 ? (trendPrev - trendNow) : null;
-  const eta = paceWk && paceWk > 0.05 ? Math.round((trendNow - profile.goalWeight) / paceWk) : null;
+  const weekChange = ma.length > 7 ? (trendNow - trendPrev) : null; // +면 증가, -면 감소
+  const toGoal = profile.goal === "maintain" ? null : Math.abs(cur - profile.goalWeight);
+  const towardGoal = profile.goal === "gain" ? (weekChange != null && weekChange > 0.05)
+    : profile.goal === "maintain" ? false : (weekChange != null && weekChange < -0.05);
+  const eta = (towardGoal && toGoal != null) ? Math.round(toGoal / Math.abs(weekChange)) : null;
   const tk = todayKey();
   const todayHabits = habits[tk] || {};
   const toggle = (i) => setHabits({ ...habits, [tk]: { ...todayHabits, [i]: !todayHabits[i] } });
   const doneCount = Object.values(todayHabits).filter(Boolean).length;
   const totalVol = sessions.reduce((a, s) => a + (s.volume || 0), 0);
+  const milestones = computeMilestones(profile);
+  const timeline = computeTimeline(profile);
 
   return <div className="space-y-4">
     <SectionTitle icon="chart">기록 & 진행</SectionTitle>
@@ -2892,8 +3034,8 @@ function ProgressTab({ profile, weightLog, sessions, habits, setHabits, addWeigh
       <div className="mb-2 flex items-center justify-between"><span className="font-semibold text-zinc-200">체중 추세 <span className="text-xs font-normal text-zinc-500">(7일 평균선)</span></span>{ma.length && <Pill tone="emerald">{trendNow.toFixed(1)}kg</Pill>}</div>
       <WeightChart log={weightLog} start={profile.startWeight} goal={profile.goalWeight} />
       <div className="mt-2 grid grid-cols-3 gap-2 text-center text-xs">
-        <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">주간 페이스</p><p className="font-bold text-emerald-400">{paceWk!=null?`-${paceWk.toFixed(2)}kg`:"–"}</p></div>
-        <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">목표까지</p><p className="font-bold text-zinc-100">{Math.max(0,(cur-profile.goalWeight)).toFixed(1)}kg</p></div>
+        <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">주간 변화</p><p className="font-bold text-emerald-400">{weekChange!=null?`${weekChange>0?"+":""}${weekChange.toFixed(2)}kg`:"–"}</p></div>
+        <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">{profile.goal==="maintain"?"현재 체중":"목표까지"}</p><p className="font-bold text-zinc-100">{profile.goal==="maintain"?`${cur.toFixed(1)}kg`:`${(toGoal||0).toFixed(1)}kg`}</p></div>
         <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">예상 도달</p><p className="font-bold text-zinc-100">{eta!=null?`약 ${eta}주`:"–"}</p></div>
       </div>
       <div className="mt-3 flex gap-2"><input value={w} onChange={(e) => setW(e.target.value)} inputMode="decimal" placeholder="오늘 체중 (kg)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 outline-none focus:border-emerald-500" /><button onClick={() => { const n = parseFloat(w); if (!isNaN(n)) { addWeight(n); setW(""); } }} className="shrink-0 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-bold text-zinc-950">기록</button></div>
@@ -2905,14 +3047,14 @@ function ProgressTab({ profile, weightLog, sessions, habits, setHabits, addWeigh
     </Card>
 
     <Card className="p-4">
-      <SectionTitle icon="trophy">감량 마일스톤</SectionTitle>
-      <div className="space-y-2.5">{EDUCATION.milestones.map((m, i) => { const reached = cur <= m.weight; return <div key={i} className="flex gap-3"><div className={cls("mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold", reached?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-500")}>{reached?"✓":i+1}</div><div><p className={cls("text-sm font-semibold", reached?"text-emerald-300":"text-zinc-300")}>{m.weight}kg · {m.label}</p><p className="text-[11px] leading-snug text-zinc-500">{m.expect}</p></div></div>; })}</div>
+      <SectionTitle icon="trophy">{profile.goal==="gain"?"증량":profile.goal==="maintain"?"유지":"감량"} 마일스톤</SectionTitle>
+      <div className="space-y-2.5">{milestones.map((m, i) => { const reached = milestoneReached(m, profile, cur); return <div key={i} className="flex gap-3"><div className={cls("mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold", reached?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-500")}>{reached?"✓":i+1}</div><div><p className={cls("text-sm font-semibold", reached?"text-emerald-300":"text-zinc-300")}>{m.weight!=null?`${m.weight}kg · `:""}{m.label}</p><p className="text-[11px] leading-snug text-zinc-500">{m.expect}</p></div></div>; })}</div>
     </Card>
 
     <Card className="p-4"><SectionTitle icon="dumbbell" sub={`총 볼륨 ${(totalVol/1000).toFixed(1)}톤`}>최근 운동 기록</SectionTitle>{sessions.length ? <div className="space-y-2">{[...sessions].reverse().slice(0, 8).map((s, i) => <div key={i} className="rounded-lg bg-zinc-800/50 p-2.5 text-sm"><div className="flex items-center justify-between"><span className="font-semibold text-zinc-200">{fmtDate(s.date)} · {s.day}</span><span className="text-[11px] text-zinc-500">{Object.keys(s.entries).length}종목 · {(s.volume||0).toLocaleString()}kg</span></div><p className="mt-0.5 text-xs text-zinc-500">{Object.keys(s.entries).join(", ")}</p></div>)}</div> : <p className="text-sm text-zinc-500">운동 탭에서 세트를 기록·저장하면 쌓입니다.</p>}</Card>
 
     <Collapsible title="주간 체중, 어떻게 봐야 하나" icon="info"><p className="mb-2">{NUTRITION.weightInterpretation.method}</p><p className="mb-1 text-zinc-400">정상 변동 ±{NUTRITION.weightInterpretation.normalDailyFluctuationKg}kg · 원인:</p><ul className="mb-2 space-y-0.5 text-zinc-400">{NUTRITION.weightInterpretation.causes.map((c, i) => <li key={i}>• {c}</li>)}</ul><p className="rounded-lg bg-emerald-500/10 p-2 text-emerald-300">{NUTRITION.weightInterpretation.rule}</p></Collapsible>
-    <Collapsible title={`예상 타임라인 (${NUTRITION.timeline.estimatedDurationMonths}개월)`} icon="flag"><div className="space-y-2">{NUTRITION.timeline.phases.map((p, i) => <div key={i} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="flex items-center justify-between"><b className="text-zinc-200">{p.range}</b><Pill tone="sky">주 {p.weeklyRateKg}kg</Pill></div><p className="mt-1 text-xs text-zinc-400">{p.note}</p></div>)}<p className="text-xs text-zinc-500">🛋 다이어트 브레이크: {NUTRITION.timeline.dietBreak.frequency} — {NUTRITION.timeline.dietBreak.method}</p></div></Collapsible>
+    <Collapsible title={profile.goal==="maintain"?"단계별 트레이닝 타임라인":`예상 타임라인 (${timeline.estimatedDurationMonths}개월)`} icon="flag"><div className="space-y-2">{timeline.phases.map((p, i) => <div key={i} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="flex items-center justify-between"><b className="text-zinc-200">{p.range}</b><Pill tone="sky">주 {p.weeklyRateKg}kg</Pill></div><p className="mt-1 text-xs text-zinc-400">{p.note}</p></div>)}<p className="text-xs text-zinc-500">{profile.goal==="maintain"?"🛋 디로드: ":"🛋 다이어트 브레이크: "}{timeline.dietBreak.frequency} — {timeline.dietBreak.method}</p></div></Collapsible>
     <Collapsible title="정체기 돌파법" icon="fire"><ul className="space-y-2">{NUTRITION.plateau.map((p, i) => <li key={i}><b className="text-amber-300">{p.method}</b><br /><span className="text-zinc-400">{p.detail}</span></li>)}</ul></Collapsible>
 
     <SectionTitle icon="sparkle">핵심 교육</SectionTitle>
@@ -2930,7 +3072,7 @@ function Home({ profile, nut, weightLog, sessions, water, go, lessonIdx }) {
   const sorted = [...weightLog].sort((a, b) => a.date.localeCompare(b.date));
   const cur = sorted.length ? sorted[sorted.length-1].weight : profile.weight;
   const lost = profile.startWeight - cur, total = profile.startWeight - profile.goalWeight;
-  const pct = clamp((lost/total)*100, 0, 100);
+  const pct = total !== 0 ? clamp((lost/total)*100, 0, 100) : (Math.abs(cur - profile.goalWeight) < 1 ? 100 : 0);
   const dow = new Date().getDay();
   const splitToday = SCHEDULE[dow];
   const isCardio = dow === 3 || dow === 6;
@@ -2939,17 +3081,18 @@ function Home({ profile, nut, weightLog, sessions, water, go, lessonIdx }) {
   const now = new Date(); const monday = new Date(now); monday.setDate(now.getDate() - ((now.getDay()+6)%7));
   const weekKey = `${monday.getFullYear()}-${String(monday.getMonth()+1).padStart(2,"0")}-${String(monday.getDate()).padStart(2,"0")}`;
   const weekCount = sessions.filter((s) => s.date >= weekKey).length;
-  const nextM = EDUCATION.milestones.find((m) => m.weight < cur) || EDUCATION.milestones[EDUCATION.milestones.length-1];
+  const milestones = computeMilestones(profile);
+  const nextM = nextMilestone(milestones, profile, cur);
   const lesson = EDUCATION.lessons[lessonIdx % EDUCATION.lessons.length];
   const macroBars = [["단백질", nut.protein, "emerald"], ["탄수", nut.carbs, "sky"], ["지방", nut.fat, "amber"]];
 
   return <div className="space-y-4">
     <div className="flex items-end justify-between">
       <div><p className="text-sm text-zinc-400">오늘도 목표를 향해 👊</p><h1 className="text-2xl font-extrabold text-zinc-50">{cur}<span className="text-base text-zinc-400">kg</span> <span className="text-zinc-600">→</span> {profile.goalWeight}<span className="text-base text-zinc-400">kg</span></h1></div>
-      <div className="text-right"><p className="text-xs text-zinc-500">감량</p><p className="text-xl font-bold text-emerald-400">-{lost.toFixed(1)}</p></div>
+      <div className="text-right"><p className="text-xs text-zinc-500">{profile.goal==="gain"?"증량":profile.goal==="maintain"?"변화":"감량"}</p><p className="text-xl font-bold text-emerald-400">{lost>0.05?"-":lost<-0.05?"+":""}{Math.abs(lost).toFixed(1)}</p></div>
     </div>
 
-    <Card className="p-4"><div className="mb-2 flex items-center justify-between text-sm"><span className="font-semibold text-zinc-200">목표까지 {Math.max(0,cur-profile.goalWeight).toFixed(1)}kg</span><span className="text-zinc-400">{pct.toFixed(0)}%</span></div><Bar value={pct} /><div className="mt-1.5 flex justify-between text-[11px] text-zinc-500"><span>{profile.startWeight}kg</span><span>{profile.goalWeight}kg</span></div></Card>
+    <Card className="p-4"><div className="mb-2 flex items-center justify-between text-sm"><span className="font-semibold text-zinc-200">{profile.goal==="maintain"?`현재 ${cur.toFixed(1)}kg`:`목표까지 ${Math.abs(cur-profile.goalWeight).toFixed(1)}kg`}</span><span className="text-zinc-400">{pct.toFixed(0)}%</span></div><Bar value={pct} /><div className="mt-1.5 flex justify-between text-[11px] text-zinc-500"><span>{profile.startWeight}kg</span><span>{profile.goalWeight}kg</span></div></Card>
 
     {/* 오늘 운동 */}
     <Card className="p-4">
@@ -2979,7 +3122,7 @@ function Home({ profile, nut, weightLog, sessions, water, go, lessonIdx }) {
 
     {/* 1분 레슨 + 다음 목표 */}
     <Card className="p-4"><div className="mb-1 flex items-center gap-2"><Ico name="sparkle" className="w-4 h-4 text-violet-400" /><span className="text-xs font-bold text-violet-300">1분 레슨</span></div><p className="text-sm font-semibold text-zinc-100">{lesson.icon} {lesson.title}</p><p className="mt-1 text-xs leading-snug text-zinc-400">{lesson.summary}</p></Card>
-    <Card className="p-4 text-center"><p className="text-xs text-zinc-500">다음 마일스톤</p><p className="text-2xl font-extrabold text-amber-400">{nextM.weight}kg</p><p className="text-xs text-zinc-400">{nextM.label}</p></Card>
+    <Card className="p-4 text-center"><p className="text-xs text-zinc-500">다음 마일스톤</p><p className="text-2xl font-extrabold text-amber-400">{nextM.weight!=null?`${nextM.weight}kg`:nextM.label}</p><p className="text-xs text-zinc-400">{nextM.weight!=null?nextM.label:nextM.expect}</p></Card>
   </div>;
 }
 
@@ -2993,6 +3136,12 @@ function ProfileModal({ profile, setProfile, onClose }) {
       <div className="grid grid-cols-2 gap-3">{[["키(cm)","height"],["현재 체중(kg)","weight"],["목표 체중(kg)","goalWeight"],["나이","age"],["시작 체중(kg)","startWeight"]].map(([l, k]) => <label key={k} className="text-sm"><span className="text-zinc-400">{l}</span><input value={p[k]} onChange={(e) => setP({ ...p, [k]: parseFloat(e.target.value)||0 })} inputMode="decimal" className="mt-1 w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 outline-none focus:border-emerald-500" /></label>)}</div>
       <p className="mb-1 mt-4 text-sm text-zinc-400">활동 수준</p>
       <div className="grid grid-cols-2 gap-1.5">{acts.map(([v, l]) => <button key={v} onClick={() => setP({ ...p, activity: v })} className={cls("rounded-xl px-2 py-2 text-xs font-semibold", p.activity===v?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+      <p className="mb-1 mt-4 text-sm text-zinc-400">목표</p>
+      <div className="grid grid-cols-3 gap-1.5">{[["cut","감량"],["maintain","유지"],["gain","증량"]].map(([v, l]) => <button key={v} onClick={() => setP({ ...p, goal: v })} className={cls("rounded-xl px-2 py-2 text-xs font-semibold", p.goal===v?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="text-sm text-zinc-400">계란 제외</span>
+        <button onClick={() => setP({ ...p, excludeEgg: !p.excludeEgg })} className={cls("relative h-7 w-12 shrink-0 rounded-full transition-colors", p.excludeEgg ? "bg-emerald-500" : "bg-zinc-700")}><span className={cls("absolute top-1 h-5 w-5 rounded-full bg-white transition-all", p.excludeEgg ? "left-6" : "left-1")} /></button>
+      </div>
       <button onClick={() => { setProfile(p); onClose(); }} className="mt-5 w-full rounded-2xl bg-emerald-500 py-3 font-bold text-zinc-950 hover:bg-emerald-400">저장</button>
     </div>
   </div>;
@@ -3161,6 +3310,40 @@ function SyncModal({ sync, onClose }) {
   </div>;
 }
 
+function AuthGate({ sync, onGuest }) {
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
+  const [mode, setMode] = useState("in");
+  const [busy, setBusy] = useState(false);
+  const ok = email && pw.length >= 6 && !busy;
+  const submit = async () => {
+    setBusy(true);
+    if (mode === "in") await sync.signIn(email.trim(), pw);
+    else await sync.signUp(email.trim(), pw);
+    setBusy(false);
+  };
+  return <div className="flex min-h-screen flex-col justify-center bg-zinc-950 px-5 py-10 text-zinc-100" style={{ fontFamily: "'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif" }}>
+    <div className="mx-auto w-full max-w-sm">
+      <div className="mb-8 flex flex-col items-center text-center">
+        <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-8 h-8" stroke={2.4} /></span>
+        <span className="text-2xl font-extrabold tracking-tight">핏코치</span>
+        <p className="mt-1.5 text-sm text-zinc-400">감량·증량 목표, 운동·식단을 한 곳에서</p>
+      </div>
+      <div className="space-y-3">
+        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" placeholder="이메일" onKeyDown={(e) => { if (e.key === "Enter" && ok) submit(); }} className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
+        <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder="비밀번호 (6자 이상)" onKeyDown={(e) => { if (e.key === "Enter" && ok) submit(); }} className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
+        {sync.err && <p className="rounded-lg bg-rose-500/10 p-2 text-xs text-rose-300">{sync.err}</p>}
+        <button disabled={!ok} onClick={submit} className="w-full rounded-2xl bg-emerald-500 py-3.5 text-sm font-bold text-zinc-950 hover:bg-emerald-400 disabled:opacity-50">{busy ? "처리 중…" : (mode === "in" ? "로그인" : "계정 만들기")}</button>
+        <button onClick={() => setMode(mode === "in" ? "up" : "in")} className="w-full text-center text-xs text-zinc-400 hover:text-zinc-200">{mode === "in" ? "처음이세요? 계정 만들기" : "이미 계정이 있어요 → 로그인"}</button>
+      </div>
+      <div className="mt-8 border-t border-zinc-800 pt-5 text-center">
+        <button onClick={onGuest} className="text-sm font-semibold text-zinc-400 hover:text-zinc-200">계정 없이 시작하기 →</button>
+        <p className="mt-1.5 text-[11px] leading-relaxed text-zinc-600">나중에 헤더의 ☁ 버튼으로 로그인하면 기기 간 동기화가 켜져요.</p>
+      </div>
+    </div>
+  </div>;
+}
+
 function App() {
   const [profile, setProfile] = useLocal("fc.profile", null);
   const [weightLog, setWeightLog] = useLocal("fc.weightLog", []);
@@ -3171,6 +3354,7 @@ function App() {
   const [phaseIdx, setPhaseIdx] = useLocal("fc.phaseIdx", 0);
   const sync = useCloudSync();
   const [showSync, setShowSync] = useState(false);
+  const [guest, setGuest] = useLocal("fc.guest", false);
   const [dayIdx, setDayIdx] = useState(0);
   const [tab, setTab] = useState("home");
   const [showProfile, setShowProfile] = useState(false);
@@ -3197,8 +3381,11 @@ function App() {
     const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = `fitcoach-backup-${tk}.json`; a.click(); URL.revokeObjectURL(url);
   };
 
+  if (sync.enabled && !sync.user && !profile && !guest)
+    return <AuthGate sync={sync} onGuest={() => setGuest(true)} />;
+
   if (!profile) return <>
-    <Onboarding onDone={(p) => { setProfile({ ...p, startWeight: p.weight, startDate: tk }); setWeightLog([{ date: tk, weight: p.weight }]); }} onLogin={sync.enabled ? () => setShowSync(true) : null} />
+    <Onboarding onDone={(p) => { setProfile({ ...p, startWeight: p.weight, startDate: tk }); setWeightLog([{ date: tk, weight: p.weight }]); }} />
     {showSync && <SyncModal sync={sync} onClose={() => setShowSync(false)} />}
   </>;
 
@@ -3218,7 +3405,7 @@ function App() {
     <main className="mx-auto max-w-md px-4 py-5 pb-28">
       {tab === "home" && <Home profile={profile} nut={nut} weightLog={weightLog} sessions={sessions} water={water} go={go} lessonIdx={lessonIdx} />}
       {tab === "workout" && <Workout phaseIdx={phaseIdx} setPhaseIdx={setPhaseIdx} dayIdx={dayIdx} setDayIdx={setDayIdx} sessions={sessions} setSessions={setSessions} setTimer={setTimer} weeksSince={weeksSince} nut={nut} />}
-      {tab === "diet" && <Diet nut={nut} foodLog={foodLog} setFoodLog={setFoodLog} water={water} setWater={setWater} />}
+      {tab === "diet" && <Diet nut={nut} foodLog={foodLog} setFoodLog={setFoodLog} water={water} setWater={setWater} excludeEgg={profile.excludeEgg} goal={profile.goal} />}
       {tab === "progress" && <ProgressTab profile={profile} weightLog={weightLog} sessions={sessions} habits={habits} setHabits={setHabits} addWeight={addWeight} exportData={exportData} />}
     </main>
 
