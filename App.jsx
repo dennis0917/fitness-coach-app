@@ -2578,7 +2578,7 @@ function WeightChart({ log, start, goal, showRaw = true }) {
 }
 
 /* ============================ 온보딩 ============================ */
-function Onboarding({ onDone }) {
+function Onboarding({ onDone, onLogin }) {
   const [step, setStep] = useState(0);
   const [p, setP] = useState({ height: 188, weight: 113, goalWeight: 83, age: 30, activity: 1.375, knee: true });
   const nut = computeNutrition(p);
@@ -2601,6 +2601,7 @@ function Onboarding({ onDone }) {
         <p className="text-sm text-zinc-400">정확한 칼로리·운동 강도를 계산하기 위해 필요해요.</p>
         <div className="grid grid-cols-2 gap-3">{field("키", "height", "cm")}{field("현재 체중", "weight", "kg")}{field("목표 체중", "goalWeight", "kg")}{field("나이", "age", "세")}</div>
         <button onClick={() => setStep(1)} className="w-full rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400">다음</button>
+        {onLogin && <button onClick={onLogin} className="w-full pt-1 text-center text-xs text-zinc-400 hover:text-zinc-200">이미 쓰던 기기가 있나요? <span className="font-semibold text-emerald-400">☁ 로그인해서 데이터 가져오기</span></button>}
       </div>}
 
       {step === 1 && <div className="space-y-4">
@@ -3196,7 +3197,10 @@ function App() {
     const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = `fitcoach-backup-${tk}.json`; a.click(); URL.revokeObjectURL(url);
   };
 
-  if (!profile) return <Onboarding onDone={(p) => { setProfile({ ...p, startWeight: p.weight, startDate: tk }); setWeightLog([{ date: tk, weight: p.weight }]); }} />;
+  if (!profile) return <>
+    <Onboarding onDone={(p) => { setProfile({ ...p, startWeight: p.weight, startDate: tk }); setWeightLog([{ date: tk, weight: p.weight }]); }} onLogin={sync.enabled ? () => setShowSync(true) : null} />
+    {showSync && <SyncModal sync={sync} onClose={() => setShowSync(false)} />}
+  </>;
 
   const NAV = [["home","홈","home"],["workout","운동","dumbbell"],["diet","식단","food"],["progress","진행","chart"]];
 
