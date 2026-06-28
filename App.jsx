@@ -95,7 +95,7 @@ const STRENGTH = {
           "focus": "가슴+삼두",
           "exercises": [
             {
-              "name": "머신 체스트 프레스",
+              "name": "해머스트렝스 체스트 프레스",
               "engName": "Machine Chest Press",
               "equipment": "머신",
               "sets": 3,
@@ -115,7 +115,7 @@ const STRENGTH = {
               "caution": "어깨에 통증이 오면 가동범위를 줄이고 손잡이 위치를 조금 낮춘다."
             },
             {
-              "name": "머신 펙덱 플라이",
+              "name": "펙덱 플라이(테크노짐)",
               "engName": "Pec Deck Fly",
               "equipment": "머신",
               "sets": 2,
@@ -169,7 +169,7 @@ const STRENGTH = {
               "progression": "15회 2세트 성공 시 0.5~1kg 증량."
             },
             {
-              "name": "어시스트 딥 머신",
+              "name": "라이프피트니스 어시스트 딥",
               "engName": "Assisted Dip Machine",
               "equipment": "머신",
               "sets": 2,
@@ -192,7 +192,7 @@ const STRENGTH = {
           "focus": "등+이두",
           "exercises": [
             {
-              "name": "랫 풀다운",
+              "name": "테크노짐 랫 풀다운",
               "engName": "Lat Pulldown",
               "equipment": "머신",
               "sets": 3,
@@ -212,7 +212,7 @@ const STRENGTH = {
               "caution": "바를 목 뒤로 당기지 않는다(어깨 부상 위험)."
             },
             {
-              "name": "시티드 머신 로우",
+              "name": "해머스트렝스 시티드 로우",
               "engName": "Seated Machine Row",
               "equipment": "머신",
               "sets": 3,
@@ -292,7 +292,7 @@ const STRENGTH = {
           "focus": "하체",
           "exercises": [
             {
-              "name": "레그 프레스",
+              "name": "해머스트렝스 레그 프레스",
               "engName": "Leg Press",
               "equipment": "머신",
               "sets": 3,
@@ -312,7 +312,7 @@ const STRENGTH = {
               "caution": "무릎을 가슴까지 깊게 내리면 관절·허리에 무리. 가동범위를 제한해 시작한다."
             },
             {
-              "name": "레그 익스텐션",
+              "name": "테크노짐 레그 익스텐션",
               "engName": "Leg Extension",
               "equipment": "머신",
               "sets": 2,
@@ -330,7 +330,7 @@ const STRENGTH = {
               "caution": "무릎 앞쪽 통증이 있으면 가동범위를 줄이고 무게를 낮춘다."
             },
             {
-              "name": "레그 컬",
+              "name": "테크노짐 레그 컬",
               "engName": "Seated/Lying Leg Curl",
               "equipment": "머신",
               "sets": 3,
@@ -367,7 +367,7 @@ const STRENGTH = {
               "caution": "무릎 보호를 위해 처음엔 의자 높이(반스쿼트)로 가동범위를 제한한다. 점프 스쿼트 금지."
             },
             {
-              "name": "시티드 카프 레이즈",
+              "name": "해머스트렝스 시티드 카프 레이즈",
               "engName": "Seated Calf Raise",
               "equipment": "머신",
               "sets": 2,
@@ -390,7 +390,7 @@ const STRENGTH = {
           "focus": "팔+어깨",
           "exercises": [
             {
-              "name": "머신 숄더 프레스",
+              "name": "해머스트렝스 숄더 프레스",
               "engName": "Machine Shoulder Press",
               "equipment": "머신",
               "sets": 3,
@@ -426,7 +426,7 @@ const STRENGTH = {
               "progression": "자세가 흔들리면 무게를 낮춘다. 15회 깔끔하면 0.5~1kg 증량."
             },
             {
-              "name": "리버스 펙덱 (리어 델트)",
+              "name": "리버스 펙덱(테크노짐)",
               "engName": "Reverse Pec Deck",
               "equipment": "머신",
               "sets": 2,
@@ -583,7 +583,7 @@ const STRENGTH = {
               "progression": "12회 2세트 성공 시 증량."
             },
             {
-              "name": "머신 체스트 프레스 (마무리)",
+              "name": "해머스트렝스 체스트 프레스 (마무리)",
               "engName": "Machine Chest Press",
               "equipment": "머신",
               "sets": 2,
@@ -606,7 +606,7 @@ const STRENGTH = {
           "focus": "등+이두",
           "exercises": [
             {
-              "name": "랫 풀다운",
+              "name": "테크노짐 랫 풀다운",
               "engName": "Lat Pulldown",
               "equipment": "머신",
               "sets": 4,
@@ -720,7 +720,7 @@ const STRENGTH = {
           "focus": "하체",
           "exercises": [
             {
-              "name": "레그 프레스",
+              "name": "해머스트렝스 레그 프레스",
               "engName": "Leg Press",
               "equipment": "머신",
               "sets": 4,
@@ -780,7 +780,7 @@ const STRENGTH = {
               "caution": "허리를 둥글게 말면 부상 위험. 무게보다 등 중립 유지가 우선."
             },
             {
-              "name": "레그 익스텐션",
+              "name": "테크노짐 레그 익스텐션",
               "engName": "Leg Extension",
               "equipment": "머신",
               "sets": 3,
@@ -797,7 +797,7 @@ const STRENGTH = {
               "progression": "15회 2세트 성공 시 증량."
             },
             {
-              "name": "레그 컬",
+              "name": "테크노짐 레그 컬",
               "engName": "Leg Curl",
               "equipment": "머신",
               "sets": 3,
@@ -814,7 +814,7 @@ const STRENGTH = {
               "progression": "목표 반복 상한 도달 시 증량."
             },
             {
-              "name": "스탠딩 카프 레이즈",
+              "name": "해머스트렝스 스탠딩 카프 레이즈",
               "engName": "Standing Calf Raise",
               "equipment": "머신",
               "sets": 3,
@@ -1093,7 +1093,7 @@ const STRENGTH = {
               "caution": "허리를 둥글게 말면 부상 위험. 무게가 무거우면 상체 각도를 약간 높여 허리 부담을 줄인다."
             },
             {
-              "name": "랫 풀다운 / 어시스트 풀업",
+              "name": "테크노짐 랫 풀다운 / 어시스트 풀업",
               "engName": "Lat Pulldown / Assisted Pull-up",
               "equipment": "머신",
               "sets": 3,
@@ -1231,7 +1231,7 @@ const STRENGTH = {
               "caution": "허리 중립 유지가 최우선. 등이 말리면 즉시 무게를 줄인다."
             },
             {
-              "name": "레그 프레스",
+              "name": "해머스트렝스 레그 프레스",
               "engName": "Leg Press",
               "equipment": "머신",
               "sets": 3,
@@ -1270,7 +1270,7 @@ const STRENGTH = {
               "caution": "무릎 통증 시 스플릿 스쿼트(제자리)로 대체하거나 가동범위 축소."
             },
             {
-              "name": "레그 컬",
+              "name": "테크노짐 레그 컬",
               "engName": "Leg Curl",
               "equipment": "머신",
               "sets": 3,
@@ -1287,7 +1287,7 @@ const STRENGTH = {
               "progression": "15회 2세트 성공 시 증량."
             },
             {
-              "name": "스탠딩 카프 레이즈",
+              "name": "해머스트렝스 스탠딩 카프 레이즈",
               "engName": "Standing Calf Raise",
               "equipment": "머신",
               "sets": 3,
@@ -2515,7 +2515,7 @@ function trafficLight(f) {
   if (g) { const d = (f.kcal / g) * 100; return d < 130 ? "green" : d < 260 ? "yellow" : "red"; }
   return f.kcal < 150 ? "green" : f.kcal < 420 ? "yellow" : "red";
 }
-const TL = { green: { dot: "bg-emerald-400", text: "text-emerald-300", label: "저칼로리" }, yellow: { dot: "bg-amber-400", text: "text-amber-300", label: "보통" }, red: { dot: "bg-rose-400", text: "text-rose-300", label: "주의" } };
+const TL = { green: { dot: "bg-lime-400", text: "text-lime-300", label: "저칼로리" }, yellow: { dot: "bg-amber-400", text: "text-amber-300", label: "보통" }, red: { dot: "bg-rose-400", text: "text-rose-300", label: "주의" } };
 const hasEgg = (name) => /계란|달걀/.test(name);
 
 /* ============================ 아이콘 ============================ */
@@ -2588,24 +2588,24 @@ function BodyMap({ targets }) {
 /* ============================ 공통 UI ============================ */
 function Card({ children, className = "" }) { return <div className={cls("rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur", className)}>{children}</div>; }
 function Pill({ children, tone = "zinc" }) {
-  const t = { zinc:"bg-zinc-800 text-zinc-300", emerald:"bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/30", amber:"bg-amber-500/15 text-amber-300 ring-1 ring-amber-500/30", rose:"bg-rose-500/15 text-rose-300 ring-1 ring-rose-500/30", sky:"bg-sky-500/15 text-sky-300 ring-1 ring-sky-500/30", violet:"bg-violet-500/15 text-violet-300 ring-1 ring-violet-500/30" };
+  const t = { zinc:"bg-zinc-800 text-zinc-300", emerald:"bg-lime-500/15 text-lime-300 ring-1 ring-lime-500/30", amber:"bg-amber-500/15 text-amber-300 ring-1 ring-amber-500/30", rose:"bg-rose-500/15 text-rose-300 ring-1 ring-rose-500/30", sky:"bg-sky-500/15 text-sky-300 ring-1 ring-sky-500/30", violet:"bg-violet-500/15 text-violet-300 ring-1 ring-violet-500/30" };
   return <span className={cls("inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium", t[tone])}>{children}</span>;
 }
 function SectionTitle({ icon, children, sub }) {
-  return <div className="mb-3 flex items-center gap-2">{icon && <span className="text-emerald-400"><Ico name={icon} className="w-5 h-5" /></span>}<h2 className="text-lg font-bold tracking-tight text-zinc-100">{children}</h2>{sub && <span className="text-xs text-zinc-500">{sub}</span>}</div>;
+  return <div className="mb-3 flex items-center gap-2">{icon && <span className="text-lime-400"><Ico name={icon} className="w-5 h-5" /></span>}<h2 className="text-lg font-bold tracking-tight text-zinc-100">{children}</h2>{sub && <span className="text-xs text-zinc-500">{sub}</span>}</div>;
 }
 function Collapsible({ title, icon, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
   return <Card className="overflow-hidden">
     <button onClick={() => setOpen(!open)} className="flex w-full items-center justify-between px-4 py-3 text-left">
-      <span className="flex items-center gap-2 font-semibold text-zinc-100">{icon && <Ico name={icon} className="w-5 h-5 text-emerald-400" />}{title}</span>
+      <span className="flex items-center gap-2 font-semibold text-zinc-100">{icon && <Ico name={icon} className="w-5 h-5 text-lime-400" />}{title}</span>
       <span className={cls("text-zinc-500 transition-transform", open && "rotate-90")}><Ico name="chevron" className="w-5 h-5" /></span>
     </button>
     {open && <div className="border-t border-zinc-800 px-4 py-3 text-sm text-zinc-300">{children}</div>}
   </Card>;
 }
 function Bar({ value, tone = "emerald" }) {
-  const t = { emerald:"from-emerald-400 to-lime-300", sky:"from-sky-400 to-cyan-300", amber:"from-amber-400 to-orange-300", violet:"from-violet-400 to-fuchsia-300", rose:"from-rose-400 to-orange-300" };
+  const t = { emerald:"from-lime-400 to-lime-300", sky:"from-sky-400 to-cyan-300", amber:"from-amber-400 to-orange-300", violet:"from-violet-400 to-fuchsia-300", rose:"from-rose-400 to-orange-300" };
   return <div className="h-2.5 w-full overflow-hidden rounded-full bg-zinc-800"><div className={cls("h-full rounded-full bg-gradient-to-r transition-all duration-500", t[tone])} style={{ width: `${clamp(value, 0, 100)}%` }} /></div>;
 }
 function Ring({ value, size = 96, stroke = 9, color = "#34d399", track = "#27272a", children }) {
@@ -2636,14 +2636,14 @@ function FloatingTimer({ timer, setTimer }) {
   const mm = Math.floor(timer.remaining / 60), ss = String(timer.remaining % 60).padStart(2, "0");
   const done = timer.remaining === 0;
   return <div className="fixed bottom-20 right-3 z-40 sm:bottom-6">
-    <div className={cls("flex items-center gap-3 rounded-2xl border bg-zinc-900/95 p-2.5 pr-3 shadow-2xl backdrop-blur", done ? "border-emerald-500/60 ring-2 ring-emerald-500/40 animate-pulse" : "border-zinc-700")}>
+    <div className={cls("flex items-center gap-3 rounded-2xl border bg-zinc-900/95 p-2.5 pr-3 shadow-2xl backdrop-blur", done ? "border-lime-500/60 ring-2 ring-lime-500/40 animate-pulse" : "border-zinc-700")}>
       <Ring value={pct} size={48} stroke={4}><span className="text-xs font-bold tabular-nums text-zinc-100">{mm}:{ss}</span></Ring>
       <div className="flex items-center gap-1">
         <button onClick={() => setTimer((t) => ({ ...t, running: !t.running }))} className="rounded-lg bg-zinc-800 p-2 text-zinc-200 hover:bg-zinc-700"><Ico name={timer.running ? "pause" : "play"} className="w-4 h-4" /></button>
         <button onClick={() => setTimer({ remaining: 0, total: 0, running: false })} className="rounded-lg bg-zinc-800 p-2 text-zinc-200 hover:bg-zinc-700"><Ico name="x" className="w-4 h-4" /></button>
       </div>
     </div>
-    {done && <p className="mt-1 text-center text-xs font-semibold text-emerald-400">휴식 끝! 다음 세트 💪</p>}
+    {done && <p className="mt-1 text-center text-xs font-semibold text-lime-400">휴식 끝! 다음 세트 💪</p>}
   </div>;
 }
 
@@ -2669,7 +2669,7 @@ function WeightChart({ log, start, goal, showRaw = true }) {
     <polyline points={trend} fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     {ma.map((d, i) => <circle key={i} cx={x(i)} cy={y(d.avg)} r="2.5" fill="#34d399" />)}
     {sorted.length <= 8 && sorted.map((d, i) => <text key={i} x={x(i)} y={H-8} textAnchor="middle" fontSize="8" className="fill-zinc-500">{fmtDate(d.date)}</text>)}
-    <text x={x(ma.length-1)} y={y(ma[ma.length-1].avg)-8} textAnchor="middle" fontSize="9" className="fill-emerald-300 font-bold">{ma[ma.length-1].avg.toFixed(1)}</text>
+    <text x={x(ma.length-1)} y={y(ma[ma.length-1].avg)-8} textAnchor="middle" fontSize="9" className="fill-lime-300 font-bold">{ma[ma.length-1].avg.toFixed(1)}</text>
   </svg>;
 }
 
@@ -2691,12 +2691,12 @@ function Onboarding({ onDone }) {
       goalText = `${w} → ${gw}kg`;
       const m = Math.round((w - gw) / 0.7 / 4.3);
       periodText = (w > gw && m > 0) ? `약 ${m}개월` : "—";
-      goalBadge = <span className="text-emerald-400"> (-{Number((w - gw).toFixed(1))}kg)</span>;
+      goalBadge = <span className="text-lime-400"> (-{Number((w - gw).toFixed(1))}kg)</span>;
     } else {
       goalText = `${w} → ${gw}kg`;
       const m = Math.round((gw - w) / 0.35 / 4.3);
       periodText = (gw > w && m > 0) ? `약 ${m}개월` : "—";
-      goalBadge = <span className="text-emerald-400"> (+{Number((gw - w).toFixed(1))}kg)</span>;
+      goalBadge = <span className="text-lime-400"> (+{Number((gw - w).toFixed(1))}kg)</span>;
     }
   }
 
@@ -2709,10 +2709,10 @@ function Onboarding({ onDone }) {
   return <div className="min-h-screen bg-zinc-950 px-5 py-8 text-zinc-100">
     <div className="mx-auto max-w-md">
       <div className="mb-6 flex items-center gap-2">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-5 h-5" stroke={2.4} /></span>
+        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-lime-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-5 h-5" stroke={2.4} /></span>
         <span className="text-xl font-extrabold">핏코치</span>
       </div>
-      <div className="mb-5 flex gap-1.5">{[0,1,2].map((i) => <div key={i} className={cls("h-1.5 flex-1 rounded-full", i <= step ? "bg-emerald-400" : "bg-zinc-800")} />)}</div>
+      <div className="mb-5 flex gap-1.5">{[0,1,2].map((i) => <div key={i} className={cls("h-1.5 flex-1 rounded-full", i <= step ? "bg-lime-400" : "bg-zinc-800")} />)}</div>
 
       {step === 0 && <div className="space-y-4">
         <h1 className="text-2xl font-extrabold leading-snug">반가워요 👋<br />목표부터 정해볼까요?</h1>
@@ -2720,17 +2720,17 @@ function Onboarding({ onDone }) {
 
         <div>
           <p className="mb-1.5 text-sm text-zinc-400">성별</p>
-          <div className="grid grid-cols-2 gap-2">{[["male","남성"],["female","여성"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, sex: v })} className={cls("rounded-xl py-3 text-sm font-semibold", p.sex === v ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+          <div className="grid grid-cols-2 gap-2">{[["male","남성"],["female","여성"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, sex: v })} className={cls("rounded-xl py-3 text-sm font-semibold", p.sex === v ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
         </div>
 
         <div className="grid grid-cols-2 gap-3">{field("키", "height", "cm", "175")}{field("현재 체중", "weight", "kg", "70")}{field("목표 체중", "goalWeight", "kg", "65")}{field("나이", "age", "세", "30")}</div>
 
         <div>
           <p className="mb-1.5 text-sm text-zinc-400">목표</p>
-          <div className="grid grid-cols-3 gap-2">{[["cut","감량"],["maintain","유지"],["gain","증량"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, goal: v })} className={cls("rounded-xl py-3 text-sm font-semibold", p.goal === v ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+          <div className="grid grid-cols-3 gap-2">{[["cut","감량"],["maintain","유지"],["gain","증량"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, goal: v })} className={cls("rounded-xl py-3 text-sm font-semibold", p.goal === v ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
         </div>
 
-        <button onClick={() => setStep(1)} className="w-full rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400">다음</button>
+        <button onClick={() => setStep(1)} className="w-full rounded-2xl bg-lime-500 py-3.5 font-bold text-zinc-950 hover:bg-lime-400">다음</button>
       </div>}
 
       {step === 1 && <div className="space-y-4">
@@ -2738,20 +2738,20 @@ function Onboarding({ onDone }) {
         <Card className="p-4">
           <p className="mb-2 text-sm font-semibold text-zinc-200">무릎·관절에 통증이나 불편이 있나요?</p>
           <div className="grid grid-cols-2 gap-2">
-            <button onClick={() => setP({ ...p, knee: true })} className={cls("rounded-xl py-3 text-sm font-semibold", p.knee ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>네 / 걱정돼요</button>
-            <button onClick={() => setP({ ...p, knee: false })} className={cls("rounded-xl py-3 text-sm font-semibold", !p.knee ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>아니요</button>
+            <button onClick={() => setP({ ...p, knee: true })} className={cls("rounded-xl py-3 text-sm font-semibold", p.knee ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>네 / 걱정돼요</button>
+            <button onClick={() => setP({ ...p, knee: false })} className={cls("rounded-xl py-3 text-sm font-semibold", !p.knee ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>아니요</button>
           </div>
           <p className="mt-2 text-xs text-zinc-500">체중 부하가 큰 운동은 무릎에 부담이 될 수 있어요. 어느 쪽이든 저충격 운동과 안전한 가동범위로 시작합니다.</p>
         </Card>
         <p className="text-sm text-zinc-400">활동 수준</p>
-        <div className="grid grid-cols-2 gap-2">{[[1.2,"거의 안 움직임"],[1.375,"가벼움(주1~3)"],[1.55,"보통(주3~5)"],[1.725,"활발(주6~7)"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, activity: v })} className={cls("rounded-xl px-2 py-2.5 text-xs font-semibold", p.activity === v ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+        <div className="grid grid-cols-2 gap-2">{[[1.2,"거의 안 움직임"],[1.375,"가벼움(주1~3)"],[1.55,"보통(주3~5)"],[1.725,"활발(주6~7)"]].map(([v,l]) => <button key={v} onClick={() => setP({ ...p, activity: v })} className={cls("rounded-xl px-2 py-2.5 text-xs font-semibold", p.activity === v ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div><p className="text-sm font-semibold text-zinc-200">계란 제외</p><p className="text-xs text-zinc-500">알레르기·비선호 시 식단 추천에서 계란을 빼요.</p></div>
-            <button onClick={() => setP({ ...p, excludeEgg: !p.excludeEgg })} className={cls("relative h-7 w-12 shrink-0 rounded-full transition-colors", p.excludeEgg ? "bg-emerald-500" : "bg-zinc-700")}><span className={cls("absolute top-1 h-5 w-5 rounded-full bg-white transition-all", p.excludeEgg ? "left-6" : "left-1")} /></button>
+            <button onClick={() => setP({ ...p, excludeEgg: !p.excludeEgg })} className={cls("relative h-7 w-12 shrink-0 rounded-full transition-colors", p.excludeEgg ? "bg-lime-500" : "bg-zinc-700")}><span className={cls("absolute top-1 h-5 w-5 rounded-full bg-white transition-all", p.excludeEgg ? "left-6" : "left-1")} /></button>
           </div>
         </Card>
-        <div className="flex gap-2"><button onClick={() => setStep(0)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button onClick={() => setStep(2)} className="flex-1 rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400">다음</button></div>
+        <div className="flex gap-2"><button onClick={() => setStep(0)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button onClick={() => setStep(2)} className="flex-1 rounded-2xl bg-lime-500 py-3.5 font-bold text-zinc-950 hover:bg-lime-400">다음</button></div>
       </div>}
 
       {step === 2 && <div className="space-y-4">
@@ -2759,8 +2759,8 @@ function Onboarding({ onDone }) {
         <Card className="p-4">
           <div className="mb-3 flex items-center justify-between"><span className="text-sm text-zinc-400">목표</span><span className="font-bold text-zinc-100">{goalText}{goalBadge}</span></div>
           <div className="grid grid-cols-2 gap-3 text-center">
-            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">하루 목표 칼로리</p><p className="text-xl font-bold text-emerald-400">{nut ? nut.target.toLocaleString() : "—"}</p></div>
-            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">단백질</p><p className="text-xl font-bold text-emerald-400">{nut ? `${nut.protein}g` : "—"}</p></div>
+            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">하루 목표 칼로리</p><p className="text-xl font-bold text-lime-400">{nut ? nut.target.toLocaleString() : "—"}</p></div>
+            <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">단백질</p><p className="text-xl font-bold text-lime-400">{nut ? `${nut.protein}g` : "—"}</p></div>
             <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">예상 기간</p><p className="text-xl font-bold text-zinc-100">{periodText}</p></div>
             <div className="rounded-xl bg-zinc-800/60 p-3"><p className="text-xs text-zinc-400">운동</p><p className="text-sm font-bold text-zinc-100">주4회 4분할</p></div>
           </div>
@@ -2768,7 +2768,7 @@ function Onboarding({ onDone }) {
         </Card>
         {!canFinish && <p className="rounded-xl bg-amber-500/10 px-3 py-2.5 text-[11px] leading-relaxed text-amber-300">성별·목표·키·체중·나이를 모두 입력하면 시작할 수 있어요.</p>}
         <p className="rounded-xl bg-zinc-900 px-3 py-2.5 text-[11px] leading-relaxed text-zinc-500">⚕ 본 앱은 의료 조언이 아닌 일반 건강·운동 정보를 제공합니다. 체중이 많이 나가거나 기저질환이 있다면 운동 시작 전 의사와 상담하고, 통증 발생 시 즉시 중단하세요.</p>
-        <div className="flex gap-2"><button onClick={() => setStep(1)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button disabled={!canFinish} onClick={() => onDone({ ...p, height: h, weight: w, goalWeight: gw, age })} className="flex-1 rounded-2xl bg-emerald-500 py-3.5 font-bold text-zinc-950 hover:bg-emerald-400 disabled:opacity-50">시작하기 🚀</button></div>
+        <div className="flex gap-2"><button onClick={() => setStep(1)} className="rounded-2xl bg-zinc-800 px-5 py-3.5 font-bold text-zinc-300">이전</button><button disabled={!canFinish} onClick={() => onDone({ ...p, height: h, weight: w, goalWeight: gw, age })} className="flex-1 rounded-2xl bg-lime-500 py-3.5 font-bold text-zinc-950 hover:bg-lime-400 disabled:opacity-50">시작하기 🚀</button></div>
       </div>}
     </div>
   </div>;
@@ -2784,7 +2784,7 @@ function PlateCalc({ defaultWeight }) {
       <span className="text-zinc-400">목표</span>
       <input value={w} onChange={(e) => setW(parseFloat(e.target.value) || 0)} inputMode="decimal" className="w-16 rounded-lg border border-zinc-700 bg-zinc-800 px-2 py-1 text-center text-zinc-100 outline-none" /><span className="text-zinc-500">kg</span>
       <span className="ml-2 text-zinc-400">봉</span>
-      {[20,15,10].map((b) => <button key={b} onClick={() => setBar(b)} className={cls("rounded px-2 py-1", bar === b ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-400")}>{b}</button>)}
+      {[20,15,10].map((b) => <button key={b} onClick={() => setBar(b)} className={cls("rounded px-2 py-1", bar === b ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-400")}>{b}</button>)}
     </div>
     {res ? <p className="text-sm text-zinc-200">한쪽: {res.plates.length ? res.plates.map((p, i) => <span key={i} className="mr-1 inline-block rounded bg-zinc-700 px-1.5 py-0.5 text-xs font-bold">{p}</span>) : <span className="text-zinc-500">봉만</span>}{res.leftover > 0 && <span className="text-amber-400"> (+{res.leftover}kg 부족)</span>}</p> : <p className="text-sm text-zinc-500">봉 무게보다 커야 해요.</p>}
   </div>;
@@ -2836,17 +2836,17 @@ function ExerciseCard({ ex, sessions, session, setSession, setTimer }) {
           <button onClick={() => setShowSwap(!showSwap)} className="flex items-center gap-1 rounded-lg bg-zinc-800 px-2 py-1 text-xs text-zinc-200 hover:bg-zinc-700"><Ico name="swap" className="w-3.5 h-3.5" />대체운동</button>
         </div>
         {ex.caution && <p className="mt-1 text-xs text-zinc-400">{ex.caution}</p>}
-        {showSwap && <ul className="mt-2 space-y-1 border-t border-zinc-700/50 pt-2 text-xs text-zinc-300">{kneeAlternatives(ex).map((a, i) => <li key={i} className="flex gap-1.5"><span className="text-emerald-400">→</span>{a}</li>)}</ul>}
+        {showSwap && <ul className="mt-2 space-y-1 border-t border-zinc-700/50 pt-2 text-xs text-zinc-300">{kneeAlternatives(ex).map((a, i) => <li key={i} className="flex gap-1.5"><span className="text-lime-400">→</span>{a}</li>)}</ul>}
       </div>}
 
       <div>
         <p className="mb-1 text-xs font-semibold text-zinc-400">자세 포인트</p>
-        <ol className="space-y-1">{(ex.formCues || []).map((c, i) => <li key={i} className="flex gap-2 text-sm text-zinc-300"><span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">{i+1}</span>{c}</li>)}</ol>
+        <ol className="space-y-1">{(ex.formCues || []).map((c, i) => <li key={i} className="flex gap-2 text-sm text-zinc-300"><span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-lime-500/20 text-[10px] font-bold text-lime-400">{i+1}</span>{c}</li>)}</ol>
       </div>
 
       <a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(ex.name + " 자세 " + (ex.engName||""))}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-zinc-800 py-2.5 text-sm font-semibold text-zinc-100 hover:bg-zinc-700"><Ico name="play" className="w-4 h-4 text-rose-400" /> 시연 영상 보기 (YouTube)</a>
 
-      <div className={cls("rounded-xl px-3 py-2 text-xs font-medium", sug.tone==="emerald"&&"bg-emerald-500/10 text-emerald-300", sug.tone==="amber"&&"bg-amber-500/10 text-amber-300", sug.tone==="sky"&&"bg-sky-500/10 text-sky-300", sug.tone==="rose"&&"bg-rose-500/10 text-rose-300")}>
+      <div className={cls("rounded-xl px-3 py-2 text-xs font-medium", sug.tone==="emerald"&&"bg-lime-500/10 text-lime-300", sug.tone==="amber"&&"bg-amber-500/10 text-amber-300", sug.tone==="sky"&&"bg-sky-500/10 text-sky-300", sug.tone==="rose"&&"bg-rose-500/10 text-rose-300")}>
         💡 다음 무게 제안: {sug.weight ? <b>{sug.weight}kg · </b> : null}{sug.text}
         {last && <span className="ml-1 block text-zinc-500">이전 기록: {last.sets.map((s) => `${s.weight||"-"}kg×${s.reps||"-"}${s.rir!==""&&s.rir!=null?`(여유${s.rir})`:""}`).join(", ")}</span>}
       </div>
@@ -2856,14 +2856,14 @@ function ExerciseCard({ ex, sessions, session, setSession, setTimer }) {
         <div className="grid grid-cols-[1.6rem_1fr_1fr_2.4rem_2.4rem] gap-1.5 px-1 text-[11px] text-zinc-500"><span>세트</span><span>무게kg</span><span>횟수</span><span title="몇 개 더 가능?">여유</span><span></span></div>
         {(session[ex.name] || []).map((s, i) => <div key={i} className="grid grid-cols-[1.6rem_1fr_1fr_2.4rem_2.4rem] items-center gap-1.5">
           <span className="text-center text-sm font-bold text-zinc-500">{i+1}</span>
-          <input value={s.weight} onChange={(e) => upd(i, "weight", e.target.value)} inputMode="decimal" placeholder={placeW} className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-1 py-2 text-center text-sm text-zinc-100 outline-none focus:border-emerald-500" />
-          <input value={s.reps} onChange={(e) => upd(i, "reps", e.target.value)} inputMode="numeric" placeholder={String(top)} className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-1 py-2 text-center text-sm text-zinc-100 outline-none focus:border-emerald-500" />
-          <input value={s.rir} onChange={(e) => upd(i, "rir", e.target.value)} inputMode="numeric" placeholder="-" className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-1 py-2 text-center text-sm text-zinc-100 outline-none focus:border-emerald-500" />
-          <button onClick={() => toggleDone(i)} className={cls("flex h-9 items-center justify-center rounded-lg", s.done ? "bg-emerald-500 text-zinc-950" : "bg-zinc-800 text-zinc-500 hover:bg-zinc-700")}><Ico name="check" className="w-4 h-4" stroke={3} /></button>
+          <input value={s.weight} onChange={(e) => upd(i, "weight", e.target.value)} inputMode="decimal" placeholder={placeW} className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-1 py-2 text-center text-sm text-zinc-100 outline-none focus:border-lime-500" />
+          <input value={s.reps} onChange={(e) => upd(i, "reps", e.target.value)} inputMode="numeric" placeholder={String(top)} className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-1 py-2 text-center text-sm text-zinc-100 outline-none focus:border-lime-500" />
+          <input value={s.rir} onChange={(e) => upd(i, "rir", e.target.value)} inputMode="numeric" placeholder="-" className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-1 py-2 text-center text-sm text-zinc-100 outline-none focus:border-lime-500" />
+          <button onClick={() => toggleDone(i)} className={cls("flex h-9 items-center justify-center rounded-lg", s.done ? "bg-lime-500 text-zinc-950" : "bg-zinc-800 text-zinc-500 hover:bg-zinc-700")}><Ico name="check" className="w-4 h-4" stroke={3} /></button>
         </div>)}
         <div className="flex flex-wrap gap-1.5 pt-1">
           <button onClick={add} className="flex-1 rounded-lg border border-dashed border-zinc-700 py-1.5 text-xs text-zinc-400 hover:text-zinc-300">+ 세트</button>
-          <button onClick={() => setTimer({ remaining: ex.rest, total: ex.rest, running: true })} className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-zinc-800 py-1.5 text-xs font-semibold text-emerald-300 hover:bg-zinc-700"><Ico name="timer" className="w-4 h-4" />휴식 {ex.rest}s</button>
+          <button onClick={() => setTimer({ remaining: ex.rest, total: ex.rest, running: true })} className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-zinc-800 py-1.5 text-xs font-semibold text-lime-300 hover:bg-zinc-700"><Ico name="timer" className="w-4 h-4" />휴식 {ex.rest}s</button>
           <button onClick={() => setShowWarm(!showWarm)} className="flex items-center gap-1 rounded-lg bg-zinc-800 px-2 py-1.5 text-xs font-semibold text-amber-300 hover:bg-zinc-700"><Ico name="fire" className="w-4 h-4" />워밍업</button>
           {ex.equipment === "바벨" && <button onClick={() => setShowPlate(!showPlate)} className="flex items-center gap-1 rounded-lg bg-zinc-800 px-2 py-1.5 text-xs font-semibold text-sky-300 hover:bg-zinc-700"><Ico name="calc" className="w-4 h-4" />원판</button>}
         </div>
@@ -2878,6 +2878,103 @@ function ExerciseCard({ ex, sessions, session, setSession, setTimer }) {
       <p className="text-[11px] text-zinc-500">📈 {ex.progression}</p>
     </div>}
   </Card>;
+}
+
+/* ============================ 버핏그라운드 신도림 머신 가이드 ============================ */
+const GYM_MACHINES = {
+  context: "버핏그라운드 신도림 · 디큐브시티 27–28F · 약 1000평 · 87종 머신 · ONE MORE REP",
+  zones: [
+    {
+      id: "plate", label: "플레이트 로디드 존", en: "PLATE-LOADED",
+      brand: "해머스트렝스", tone: "rose", icon: "dumbbell",
+      desc: "원판을 직접 끼우는 아이솔레터럴 머신. 좌우 독립 구동으로 큰 가동범위와 고중량에 유리.",
+      groups: [
+        { part: "가슴", machines: ["아이소 체스트 프레스 (Iso-Lateral)", "인클라인 체스트 프레스", "와이드 체스트 프레스", "디클라인 프레스"] },
+        { part: "등", machines: ["아이소 로우 로우 (Low Row)", "하이 로우", "프론트 풀다운", "디버징 로우", "파워 슈러그"] },
+        { part: "어깨", machines: ["아이소 숄더 프레스"] },
+        { part: "하체", machines: ["레그 프레스", "핵 스쿼트", "V-스쿼트", "라이너 레그 프레스"] },
+        { part: "팔", machines: ["시티드 딥 (삼두)"] },
+      ],
+    },
+    {
+      id: "pin", label: "핀 로디드 존", en: "PIN-LOADED",
+      brand: "테크노짐 · 라이프피트니스", tone: "emerald", icon: "dumbbell",
+      desc: "핀 하나로 중량 조절. 궤적이 고정돼 초보자·고립운동에 안전하고 세팅이 빠름.",
+      groups: [
+        { part: "가슴", machines: ["체스트 프레스", "펙덱 플라이 (Pec Deck)"] },
+        { part: "등", machines: ["랫 풀다운", "시티드 로우", "풀오버", "어시스트 풀업·딥"] },
+        { part: "어깨", machines: ["숄더 프레스", "래터럴 레이즈 머신"] },
+        { part: "하체", machines: ["레그 익스텐션", "레그 컬 (시티드·라잉)", "레그 프레스", "이너타이 (어덕터)", "아웃타이 (어브덕터)", "글루트 머신"] },
+        { part: "팔", machines: ["바이셉 컬", "트라이셉 익스텐션", "암 컬"] },
+        { part: "코어", machines: ["업도미널 크런치", "로터리 토르소", "백 익스텐션"] },
+      ],
+    },
+    {
+      id: "rack", label: "랙 · 프리웨이트 존", en: "RACK·FREE WEIGHT",
+      brand: "짐레코 · 해머스트렝스", tone: "amber", icon: "dumbbell",
+      desc: "바벨·덤벨·랙으로 복합운동. 스미스 머신은 가이드 레일이 있어 초보 스쿼트·벤치에 안전.",
+      groups: [
+        { part: "랙·바벨", machines: ["파워 랙", "스쿼트 랙", "스미스 머신", "플랫 벤치프레스", "인클라인 벤치프레스", "랜드마인"] },
+        { part: "덤벨·케틀벨", machines: ["덤벨 1–50kg 풀세트", "케틀벨", "EZ바 · 프리처 컬 벤치"] },
+        { part: "하체·둔근", machines: ["힙 쓰러스트 벤치", "백 익스텐션 (GHD)"] },
+        { part: "맨몸", machines: ["풀업 바", "딥스 스테이션"] },
+      ],
+    },
+    {
+      id: "cardio", label: "카디오 존", en: "CARDIO",
+      brand: "라이프피트니스 · 테크노짐", tone: "sky", icon: "run",
+      desc: "유산소·워밍업용. 무릎 부담 적은 일립티컬·리컴번트 바이크·로잉을 우선 추천.",
+      groups: [
+        { part: "무충격 (무릎 친화)", machines: ["일립티컬 (크로스 트레이너)", "리컴번트 바이크", "업라이트 바이크", "로잉 머신 (Concept2)"] },
+        { part: "유산소", machines: ["트레드밀", "스텝밀 (계단)", "아크 트레이너"] },
+      ],
+    },
+    {
+      id: "hyrox", label: "HYROX 컨디셔닝", en: "HYROX 공식",
+      brand: "공식 파트너 존", tone: "violet", icon: "fire",
+      desc: "전신 기능성 컨디셔닝. 고강도 인터벌·하이브리드 트레이닝용 소도구.",
+      groups: [
+        { part: "푸시·풀", machines: ["스키에르그 (SkiErg)", "썰매 밀기·끌기 (Sled)", "배틀 로프"] },
+        { part: "전신", machines: ["에어 바이크 (어썰트)", "로잉 (RowErg)", "월볼", "샌드백", "케틀벨 · 파머스 캐리"] },
+      ],
+    },
+  ],
+};
+
+function GymGuide() {
+  return <div className="space-y-3">
+    <Card className="p-3">
+      <div className="flex items-center gap-2.5">
+        <span className="text-lime-400"><Ico name="dumbbell" className="w-5 h-5" /></span>
+        <div>
+          <p className="text-sm font-bold text-zinc-100">버핏그라운드 신도림 머신 가이드</p>
+          <p className="text-[11px] leading-snug text-zinc-500">{GYM_MACHINES.context}</p>
+        </div>
+      </div>
+    </Card>
+    {GYM_MACHINES.zones.map((z, i) => (
+      <Collapsible key={z.id} defaultOpen={i === 0} icon={z.icon}
+        title={<span className="flex flex-wrap items-center gap-1.5">{z.label}<Pill tone={z.tone}>{z.brand}</Pill></span>}>
+        <p className="mb-3 text-[12px] leading-snug text-zinc-400">{z.desc}</p>
+        <div className="space-y-3">
+          {z.groups.map((g, j) => (
+            <div key={j}>
+              <div className="mb-1.5 flex items-center gap-2">
+                <span className="text-xs font-bold text-lime-300">{g.part}</span>
+                <span className="text-[10px] tabular-nums text-zinc-600">{g.machines.length}종</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {g.machines.map((m, k) => (
+                  <span key={k} className="rounded-lg bg-zinc-800/70 px-2.5 py-1 text-[12px] text-zinc-200 ring-1 ring-zinc-700/50">{m}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Collapsible>
+    ))}
+    <p className="px-1 text-[11px] leading-relaxed text-zinc-600">⚐ 머신 구성은 지점 사정에 따라 변동될 수 있어요. 처음 쓰는 머신은 시트·핀·안전바부터 확인하고, 무릎·허리 통증 시 중량을 낮추세요.</p>
+  </div>;
 }
 
 /* ============================ 운동 탭 ============================ */
@@ -2899,27 +2996,29 @@ function Workout({ phaseIdx, setPhaseIdx, dayIdx, setDayIdx, sessions, setSessio
   };
 
   return <div className="space-y-4">
-    <div className="grid grid-cols-2 gap-1.5">
+    <div className="grid grid-cols-3 gap-1.5">
       <button onClick={() => setSub("strength")} className={cls("rounded-xl py-2.5 text-sm font-bold", sub==="strength"?"bg-violet-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>💪 근력</button>
       <button onClick={() => setSub("cardio")} className={cls("rounded-xl py-2.5 text-sm font-bold", sub==="cardio"?"bg-sky-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>🏃 유산소</button>
+      <button onClick={() => setSub("machines")} className={cls("rounded-xl py-2.5 text-sm font-bold", sub==="machines"?"bg-lime-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>🏋 머신</button>
     </div>
 
     {sub === "strength" && <>
       <Card className="p-3">
-        <p className="mb-2 text-xs text-zinc-400">단계 (시작 후 약 {weeksSince}주차 · 추천 <span className="font-semibold text-emerald-400">{STRENGTH.phases[recommended].name.split("(")[0]}</span>)</p>
-        <div className="grid grid-cols-3 gap-1.5">{STRENGTH.phases.map((p, i) => <button key={p.id} onClick={() => setPhaseIdx(i)} className={cls("rounded-xl px-1 py-2 text-center text-xs font-semibold", i===phaseIdx?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}><div>{p.name.split(" ")[0]}</div><div className="text-[10px] opacity-70">{p.weeks}</div></button>)}</div>
+        <p className="mb-2 text-xs text-zinc-400">단계 (시작 후 약 {weeksSince}주차 · 추천 <span className="font-semibold text-lime-400">{STRENGTH.phases[recommended].name.split("(")[0]}</span>)</p>
+        <div className="grid grid-cols-3 gap-1.5">{STRENGTH.phases.map((p, i) => <button key={p.id} onClick={() => setPhaseIdx(i)} className={cls("rounded-xl px-1 py-2 text-center text-xs font-semibold", i===phaseIdx?"bg-lime-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}><div>{p.name.split(" ")[0]}</div><div className="text-[10px] opacity-70">{p.weeks}</div></button>)}</div>
         <p className="mt-2 text-[11px] leading-snug text-zinc-500">{phase.focus}</p>
       </Card>
       <div className="grid grid-cols-4 gap-1.5">{phase.days.map((d, i) => <button key={i} onClick={() => setDayIdx(i)} className={cls("rounded-xl py-2 text-center text-xs font-bold", i===dayIdx?"bg-violet-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>Day{i+1}<div className="text-[10px] font-medium opacity-80">{d.focus}</div></button>)}</div>
       <Collapsible title="워밍업 (운동 전 필수)" icon="fire"><ol className="space-y-1.5">{STRENGTH.warmup.map((w, i) => <li key={i}><b className="text-zinc-200">{w.step}</b> — {w.detail}</li>)}</ol></Collapsible>
       <div className="space-y-2.5">{day.exercises.map((ex, i) => <ExerciseCard key={ex.name+i} ex={ex} sessions={sessions} session={session} setSession={setSession} setTimer={setTimer} />)}</div>
-      <button onClick={save} className="w-full rounded-2xl bg-emerald-500 py-3.5 text-base font-bold text-zinc-950 shadow-lg shadow-emerald-500/20 hover:bg-emerald-400">✓ 오늘 운동 저장하기</button>
+      <button onClick={save} className="w-full rounded-2xl bg-lime-500 py-3.5 text-base font-bold text-zinc-950 shadow-lg shadow-lime-500/20 hover:bg-lime-400">✓ 오늘 운동 저장하기</button>
       <Collapsible title="쿨다운 스트레칭" icon="reset"><ol className="space-y-1.5">{STRENGTH.cooldown.map((w, i) => <li key={i}><b className="text-zinc-200">{w.step}</b> — {w.detail}</li>)}</ol></Collapsible>
-      <Collapsible title="운동 원칙" icon="info"><ul className="space-y-2">{STRENGTH.principles.map((p, i) => <li key={i}><b className="text-emerald-300">{p.name}</b><br /><span className="text-zinc-400">{p.desc}</span></li>)}</ul></Collapsible>
+      <Collapsible title="운동 원칙" icon="info"><ul className="space-y-2">{STRENGTH.principles.map((p, i) => <li key={i}><b className="text-lime-300">{p.name}</b><br /><span className="text-zinc-400">{p.desc}</span></li>)}</ul></Collapsible>
       <Collapsible title="⚠ 부상 예방 주의사항" icon="warn"><ul className="space-y-2">{STRENGTH.cautions.map((p, i) => <li key={i}><b className="text-rose-300">{p.topic}</b><br /><span className="text-zinc-400">{p.detail}</span></li>)}</ul></Collapsible>
     </>}
 
     {sub === "cardio" && <Cardio nut={nut} setTimer={setTimer} />}
+    {sub === "machines" && <GymGuide />}
   </div>;
 }
 
@@ -2933,13 +3032,13 @@ function Cardio({ nut, setTimer }) {
     </Card>
     <Card className="p-4">
       <SectionTitle icon="fire" sub={`최대심박 ${nut.maxHR}`}>나의 심박존</SectionTitle>
-      <div className="space-y-1.5">{nut.zones.map((z, i) => <div key={i} className={cls("flex items-center justify-between rounded-lg px-3 py-2 text-sm", i===1?"bg-emerald-500/15 ring-1 ring-emerald-500/30":"bg-zinc-800/60")}><span className={cls("font-semibold", i===1?"text-emerald-300":"text-zinc-200")}>{z.name}</span><span className="tabular-nums text-zinc-300">{z.lo}–{z.hi} bpm</span></div>)}</div>
-      <p className="mt-2 text-[11px] text-zinc-500">지방대사 주력은 <span className="text-emerald-400">Zone2</span>. 1~4주는 전부 Zone2.</p>
+      <div className="space-y-1.5">{nut.zones.map((z, i) => <div key={i} className={cls("flex items-center justify-between rounded-lg px-3 py-2 text-sm", i===1?"bg-lime-500/15 ring-1 ring-lime-500/30":"bg-zinc-800/60")}><span className={cls("font-semibold", i===1?"text-lime-300":"text-zinc-200")}>{z.name}</span><span className="tabular-nums text-zinc-300">{z.lo}–{z.hi} bpm</span></div>)}</div>
+      <p className="mt-2 text-[11px] text-zinc-500">지방대사 주력은 <span className="text-lime-400">Zone2</span>. 1~4주는 전부 Zone2.</p>
     </Card>
     <SectionTitle icon="chart">단계별 유산소 계획</SectionTitle>
-    {CARDIO.phases.map((p, i) => <Collapsible key={i} title={p.period} icon="run" defaultOpen={i===0}><div className="space-y-1.5"><p><span className="text-zinc-500">빈도</span> · {p.frequency}</p><p><span className="text-zinc-500">강도</span> · {p.intensity}</p><p><span className="text-zinc-500">시간</span> · {p.duration}</p><p className="rounded-lg bg-zinc-800/60 p-2"><b className="text-emerald-300">근력과 배치</b> · {p.placement}</p></div></Collapsible>)}
+    {CARDIO.phases.map((p, i) => <Collapsible key={i} title={p.period} icon="run" defaultOpen={i===0}><div className="space-y-1.5"><p><span className="text-zinc-500">빈도</span> · {p.frequency}</p><p><span className="text-zinc-500">강도</span> · {p.intensity}</p><p><span className="text-zinc-500">시간</span> · {p.duration}</p><p className="rounded-lg bg-zinc-800/60 p-2"><b className="text-lime-300">근력과 배치</b> · {p.placement}</p></div></Collapsible>)}
     <SectionTitle icon="info">저충격 종목 (무릎 친화)</SectionTitle>
-    <div className="space-y-2">{CARDIO.modalities.map((m, i) => <Card key={i} className="p-3"><div className="mb-1 flex items-center gap-2"><span className="font-bold text-zinc-100">{m.name}</span><Pill tone={/무충격|매우/.test(m.impact)?"emerald":"sky"}>충격 {m.impact}</Pill></div><p className="text-xs text-emerald-300/90">👍 {m.pros}</p><p className="mt-1 text-xs text-zinc-400">👎 {m.cons}</p></Card>)}</div>
+    <div className="space-y-2">{CARDIO.modalities.map((m, i) => <Card key={i} className="p-3"><div className="mb-1 flex items-center gap-2"><span className="font-bold text-zinc-100">{m.name}</span><Pill tone={/무충격|매우/.test(m.impact)?"emerald":"sky"}>충격 {m.impact}</Pill></div><p className="text-xs text-lime-300/90">👍 {m.pros}</p><p className="mt-1 text-xs text-zinc-400">👎 {m.cons}</p></Card>)}</div>
     <Collapsible title="걸음수(NEAT) 목표" icon="run"><ul className="mb-2 space-y-1">{CARDIO.neat.stepGoals.map((s, i) => <li key={i}>• {s}</li>)}</ul><p className="mb-1 font-semibold text-zinc-200">팁</p><ul className="space-y-1 text-zinc-400">{CARDIO.neat.tips.map((s, i) => <li key={i}>• {s}</li>)}</ul></Collapsible>
     <Collapsible title="⚠ 무릎 통증 위험 신호" icon="warn"><ul className="space-y-1.5 text-zinc-300">{CARDIO.warningSigns.map((s, i) => <li key={i}>• {s}</li>)}</ul></Collapsible>
   </div>;
@@ -2968,11 +3067,11 @@ function Diet({ nut, foodLog, setFoodLog, water, setWater, excludeEgg = false, g
         </Ring>
         <div className="flex-1 space-y-2">
           <div>
-            <div className="flex items-baseline justify-between"><span className="text-xs font-semibold text-emerald-300">단백질 (최우선)</span><span className="text-sm font-bold text-emerald-400">{totals.protein}<span className="text-xs text-zinc-500">/{nut.protein}g</span></span></div>
+            <div className="flex items-baseline justify-between"><span className="text-xs font-semibold text-lime-300">단백질 (최우선)</span><span className="text-sm font-bold text-lime-400">{totals.protein}<span className="text-xs text-zinc-500">/{nut.protein}g</span></span></div>
             <Bar value={(totals.protein/nut.protein)*100} tone="emerald" />
           </div>
           <div className="flex justify-between text-xs"><span className="text-zinc-400">남은 칼로리</span><span className="font-semibold text-zinc-200">{(nut.target-totals.kcal).toLocaleString()} kcal</span></div>
-          <div className="flex justify-between text-xs"><span className="text-zinc-400">남은 단백질</span><span className="font-semibold text-emerald-400">{Math.max(0, nut.protein-totals.protein)} g</span></div>
+          <div className="flex justify-between text-xs"><span className="text-zinc-400">남은 단백질</span><span className="font-semibold text-lime-400">{Math.max(0, nut.protein-totals.protein)} g</span></div>
         </div>
       </div>
       <div className="mt-3 flex items-center justify-center gap-4 border-t border-zinc-800 pt-2 text-[11px]">
@@ -2981,27 +3080,27 @@ function Diet({ nut, foodLog, setFoodLog, water, setWater, excludeEgg = false, g
       </div>
     </Card>
 
-    <div className="grid grid-cols-4 gap-1.5">{tabs.map(([k, l]) => <button key={k} onClick={() => setTab(k)} className={cls("rounded-xl py-2 text-xs font-semibold", tab===k?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+    <div className="grid grid-cols-4 gap-1.5">{tabs.map(([k, l]) => <button key={k} onClick={() => setTab(k)} className={cls("rounded-xl py-2 text-xs font-semibold", tab===k?"bg-lime-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
 
     {tab === "log" && <div className="space-y-3">
-      <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="음식 검색 (예: 닭가슴살)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:border-emerald-500" />
+      <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="음식 검색 (예: 닭가슴살)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:border-lime-500" />
       {q && <Card className="max-h-60 overflow-y-auto p-1">{filtered.length ? filtered.map((f, i) => { const tl = trafficLight(f); return <button key={i} onClick={() => { addF(f); setQ(""); }} className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm hover:bg-zinc-800"><span className="flex items-center gap-2 text-zinc-200"><span className={cls("h-2.5 w-2.5 rounded-full", TL[tl].dot)} />{f.name} <span className="text-xs text-zinc-500">{f.serving}</span></span><span className="text-xs text-zinc-400">{f.kcal}kcal·P{f.protein}</span></button>; }) : <p className="px-3 py-2 text-sm text-zinc-500">결과 없음</p>}</Card>}
       <Card className="p-2">{log.length ? log.map((f, i) => <div key={i} className="flex items-center justify-between rounded-lg px-3 py-2 text-sm"><span className="flex items-center gap-2 text-zinc-200"><span className={cls("h-2.5 w-2.5 rounded-full", TL[f.tl||"yellow"].dot)} />{f.name}</span><div className="flex items-center gap-3"><span className="text-xs text-zinc-400">{f.kcal}kcal·P{f.protein}</span><button onClick={() => rmF(i)} className="text-zinc-600 hover:text-rose-400">✕</button></div></div>) : <p className="px-3 py-4 text-center text-sm text-zinc-500">위에서 음식을 검색해 오늘 먹은 것을 기록하세요.</p>}</Card>
       <Card className="p-4"><SectionTitle icon="water">물 ({water}/12잔)</SectionTitle><Bar value={(water/12)*100} tone="sky" /><div className="mt-2 flex gap-2"><button onClick={() => setWater(Math.max(0, water-1))} className="flex-1 rounded-lg bg-zinc-800 py-1.5 text-zinc-300">−</button><button onClick={() => setWater(water+1)} className="flex-1 rounded-lg bg-sky-500/90 py-1.5 font-bold text-zinc-950">+ 한 잔</button></div></Card>
     </div>}
 
-    {tab === "menu" && <div className="space-y-3"><Card className="p-3"><div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"><span className="font-semibold text-emerald-300">🍽️ 포션 가이드</span><span className="text-zinc-300">{PORTION_GUIDE[goal] || PORTION_GUIDE.cut}</span></div></Card>{DIET.sampleDays.filter((d) => excludeEgg ? !d.meals.some((m) => m.foods.some(hasEgg)) : true).map((d, i) => <Card key={i} className="p-4"><div className="mb-2 flex items-center justify-between"><span className="font-bold text-zinc-100">{d.day}</span><Pill tone="emerald">{d.totalKcal}kcal·P{d.totalProtein}</Pill></div><div className="space-y-2">{d.meals.map((m, j) => <div key={j} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="mb-0.5 flex items-center justify-between"><span className="text-xs font-semibold text-emerald-300">{m.type}</span><span className="text-[11px] text-zinc-500">{m.kcal}kcal·P{m.protein}</span></div><p className="text-sm text-zinc-300">{m.foods.join(" · ")}</p></div>)}</div></Card>)}
+    {tab === "menu" && <div className="space-y-3"><Card className="p-3"><div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm"><span className="font-semibold text-lime-300">🍽️ 포션 가이드</span><span className="text-zinc-300">{PORTION_GUIDE[goal] || PORTION_GUIDE.cut}</span></div></Card>{DIET.sampleDays.filter((d) => excludeEgg ? !d.meals.some((m) => m.foods.some(hasEgg)) : true).map((d, i) => <Card key={i} className="p-4"><div className="mb-2 flex items-center justify-between"><span className="font-bold text-zinc-100">{d.day}</span><Pill tone="emerald">{d.totalKcal}kcal·P{d.totalProtein}</Pill></div><div className="space-y-2">{d.meals.map((m, j) => <div key={j} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="mb-0.5 flex items-center justify-between"><span className="text-xs font-semibold text-lime-300">{m.type}</span><span className="text-[11px] text-zinc-500">{m.kcal}kcal·P{m.protein}</span></div><p className="text-sm text-zinc-300">{m.foods.join(" · ")}</p></div>)}</div></Card>)}
       <Card className="p-4"><SectionTitle icon="water">편의점 조합</SectionTitle><ul className="space-y-1.5 text-sm text-zinc-300">{DIET.convenienceStore.map((c, i) => <li key={i}>🏪 {c}</li>)}</ul></Card>
     </div>}
 
-    {tab === "db" && <div className="space-y-2"><input value={q} onChange={(e) => setQ(e.target.value)} placeholder="음식 검색" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:border-emerald-500" />
-      <Card className="overflow-hidden">{filtered.map((f, i) => { const tl = trafficLight(f); return <div key={i} className="flex items-center justify-between border-b border-zinc-800/70 px-3 py-2.5 last:border-0"><div className="flex min-w-0 items-center gap-2"><span className={cls("h-3 w-3 shrink-0 rounded-full", TL[tl].dot)} /><div className="min-w-0"><p className="truncate text-sm font-medium text-zinc-200">{f.name} <span className="text-xs font-normal text-zinc-500">{f.serving}</span></p>{f.tip && <p className="truncate text-[11px] text-zinc-500">💡 {f.tip}</p>}</div></div><div className="ml-2 shrink-0 text-right"><p className="text-sm font-semibold text-zinc-100">{f.kcal}<span className="text-[10px] text-zinc-500">kcal</span></p><p className="text-[11px] text-emerald-400">P {f.protein}g</p></div></div>; })}</Card>
+    {tab === "db" && <div className="space-y-2"><input value={q} onChange={(e) => setQ(e.target.value)} placeholder="음식 검색" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:border-lime-500" />
+      <Card className="overflow-hidden">{filtered.map((f, i) => { const tl = trafficLight(f); return <div key={i} className="flex items-center justify-between border-b border-zinc-800/70 px-3 py-2.5 last:border-0"><div className="flex min-w-0 items-center gap-2"><span className={cls("h-3 w-3 shrink-0 rounded-full", TL[tl].dot)} /><div className="min-w-0"><p className="truncate text-sm font-medium text-zinc-200">{f.name} <span className="text-xs font-normal text-zinc-500">{f.serving}</span></p>{f.tip && <p className="truncate text-[11px] text-zinc-500">💡 {f.tip}</p>}</div></div><div className="ml-2 shrink-0 text-right"><p className="text-sm font-semibold text-zinc-100">{f.kcal}<span className="text-[10px] text-zinc-500">kcal</span></p><p className="text-[11px] text-lime-400">P {f.protein}g</p></div></div>; })}</Card>
     </div>}
 
     {tab === "tips" && <div className="space-y-3">
-      <Collapsible title="식단 기본 원칙" icon="check" defaultOpen><ul className="space-y-2">{DIET.generalRules.map((r, i) => <li key={i} className="flex gap-2"><span className="text-emerald-400">✓</span>{r}</li>)}</ul></Collapsible>
+      <Collapsible title="식단 기본 원칙" icon="check" defaultOpen><ul className="space-y-2">{DIET.generalRules.map((r, i) => <li key={i} className="flex gap-2"><span className="text-lime-400">✓</span>{r}</li>)}</ul></Collapsible>
       <Collapsible title="외식·회식 칼로리 줄이기" icon="food"><ul className="space-y-1.5">{DIET.eatingOut.map((r, i) => <li key={i}>• {r}</li>)}</ul></Collapsible>
-      <Collapsible title="저칼로리 대체 (스왑)" icon="swap"><div className="space-y-1.5">{DIET.swaps.map((s, i) => <div key={i} className="flex items-center gap-2 text-sm"><span className="text-zinc-400 line-through">{s.from}</span><span className="text-zinc-600">→</span><span className="font-semibold text-emerald-300">{s.to}</span><span className="ml-auto text-[11px] text-amber-400">{s.save}</span></div>)}</div></Collapsible>
+      <Collapsible title="저칼로리 대체 (스왑)" icon="swap"><div className="space-y-1.5">{DIET.swaps.map((s, i) => <div key={i} className="flex items-center gap-2 text-sm"><span className="text-zinc-400 line-through">{s.from}</span><span className="text-zinc-600">→</span><span className="font-semibold text-lime-300">{s.to}</span><span className="ml-auto text-[11px] text-amber-400">{s.save}</span></div>)}</div></Collapsible>
     </div>}
   </div>;
 }
@@ -3034,31 +3133,31 @@ function ProgressTab({ profile, weightLog, sessions, habits, setHabits, addWeigh
       <div className="mb-2 flex items-center justify-between"><span className="font-semibold text-zinc-200">체중 추세 <span className="text-xs font-normal text-zinc-500">(7일 평균선)</span></span>{ma.length && <Pill tone="emerald">{trendNow.toFixed(1)}kg</Pill>}</div>
       <WeightChart log={weightLog} start={profile.startWeight} goal={profile.goalWeight} />
       <div className="mt-2 grid grid-cols-3 gap-2 text-center text-xs">
-        <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">주간 변화</p><p className="font-bold text-emerald-400">{weekChange!=null?`${weekChange>0?"+":""}${weekChange.toFixed(2)}kg`:"–"}</p></div>
+        <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">주간 변화</p><p className="font-bold text-lime-400">{weekChange!=null?`${weekChange>0?"+":""}${weekChange.toFixed(2)}kg`:"–"}</p></div>
         <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">{profile.goal==="maintain"?"현재 체중":"목표까지"}</p><p className="font-bold text-zinc-100">{profile.goal==="maintain"?`${cur.toFixed(1)}kg`:`${(toGoal||0).toFixed(1)}kg`}</p></div>
         <div className="rounded-lg bg-zinc-800/50 p-2"><p className="text-zinc-500">예상 도달</p><p className="font-bold text-zinc-100">{eta!=null?`약 ${eta}주`:"–"}</p></div>
       </div>
-      <div className="mt-3 flex gap-2"><input value={w} onChange={(e) => setW(e.target.value)} inputMode="decimal" placeholder="오늘 체중 (kg)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 outline-none focus:border-emerald-500" /><button onClick={() => { const n = parseFloat(w); if (!isNaN(n)) { addWeight(n); setW(""); } }} className="shrink-0 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-bold text-zinc-950">기록</button></div>
+      <div className="mt-3 flex gap-2"><input value={w} onChange={(e) => setW(e.target.value)} inputMode="decimal" placeholder="오늘 체중 (kg)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 outline-none focus:border-lime-500" /><button onClick={() => { const n = parseFloat(w); if (!isNaN(n)) { addWeight(n); setW(""); } }} className="shrink-0 rounded-xl bg-lime-500 px-4 py-2 text-sm font-bold text-zinc-950">기록</button></div>
     </Card>
 
     <Card className="p-4">
       <div className="mb-3 flex items-center justify-between"><SectionTitle icon="check">오늘의 습관</SectionTitle><Pill tone="emerald">{doneCount}/{EDUCATION.habits.length}</Pill></div>
-      <div className="space-y-1">{EDUCATION.habits.map((h, i) => <button key={i} onClick={() => toggle(i)} className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-zinc-800/60"><span className={cls("flex h-5 w-5 shrink-0 items-center justify-center rounded-md", todayHabits[i]?"bg-emerald-500 text-zinc-950":"border border-zinc-600")}>{todayHabits[i] && <Ico name="check" className="w-3.5 h-3.5" stroke={3} />}</span><span className={cls("text-sm", todayHabits[i]?"text-zinc-500 line-through":"text-zinc-200")}>{h}</span></button>)}</div>
+      <div className="space-y-1">{EDUCATION.habits.map((h, i) => <button key={i} onClick={() => toggle(i)} className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left hover:bg-zinc-800/60"><span className={cls("flex h-5 w-5 shrink-0 items-center justify-center rounded-md", todayHabits[i]?"bg-lime-500 text-zinc-950":"border border-zinc-600")}>{todayHabits[i] && <Ico name="check" className="w-3.5 h-3.5" stroke={3} />}</span><span className={cls("text-sm", todayHabits[i]?"text-zinc-500 line-through":"text-zinc-200")}>{h}</span></button>)}</div>
     </Card>
 
     <Card className="p-4">
       <SectionTitle icon="trophy">{profile.goal==="gain"?"증량":profile.goal==="maintain"?"유지":"감량"} 마일스톤</SectionTitle>
-      <div className="space-y-2.5">{milestones.map((m, i) => { const reached = milestoneReached(m, profile, cur); return <div key={i} className="flex gap-3"><div className={cls("mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold", reached?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-500")}>{reached?"✓":i+1}</div><div><p className={cls("text-sm font-semibold", reached?"text-emerald-300":"text-zinc-300")}>{m.weight!=null?`${m.weight}kg · `:""}{m.label}</p><p className="text-[11px] leading-snug text-zinc-500">{m.expect}</p></div></div>; })}</div>
+      <div className="space-y-2.5">{milestones.map((m, i) => { const reached = milestoneReached(m, profile, cur); return <div key={i} className="flex gap-3"><div className={cls("mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold", reached?"bg-lime-500 text-zinc-950":"bg-zinc-800 text-zinc-500")}>{reached?"✓":i+1}</div><div><p className={cls("text-sm font-semibold", reached?"text-lime-300":"text-zinc-300")}>{m.weight!=null?`${m.weight}kg · `:""}{m.label}</p><p className="text-[11px] leading-snug text-zinc-500">{m.expect}</p></div></div>; })}</div>
     </Card>
 
     <Card className="p-4"><SectionTitle icon="dumbbell" sub={`총 볼륨 ${(totalVol/1000).toFixed(1)}톤`}>최근 운동 기록</SectionTitle>{sessions.length ? <div className="space-y-2">{[...sessions].reverse().slice(0, 8).map((s, i) => <div key={i} className="rounded-lg bg-zinc-800/50 p-2.5 text-sm"><div className="flex items-center justify-between"><span className="font-semibold text-zinc-200">{fmtDate(s.date)} · {s.day}</span><span className="text-[11px] text-zinc-500">{Object.keys(s.entries).length}종목 · {(s.volume||0).toLocaleString()}kg</span></div><p className="mt-0.5 text-xs text-zinc-500">{Object.keys(s.entries).join(", ")}</p></div>)}</div> : <p className="text-sm text-zinc-500">운동 탭에서 세트를 기록·저장하면 쌓입니다.</p>}</Card>
 
-    <Collapsible title="주간 체중, 어떻게 봐야 하나" icon="info"><p className="mb-2">{NUTRITION.weightInterpretation.method}</p><p className="mb-1 text-zinc-400">정상 변동 ±{NUTRITION.weightInterpretation.normalDailyFluctuationKg}kg · 원인:</p><ul className="mb-2 space-y-0.5 text-zinc-400">{NUTRITION.weightInterpretation.causes.map((c, i) => <li key={i}>• {c}</li>)}</ul><p className="rounded-lg bg-emerald-500/10 p-2 text-emerald-300">{NUTRITION.weightInterpretation.rule}</p></Collapsible>
+    <Collapsible title="주간 체중, 어떻게 봐야 하나" icon="info"><p className="mb-2">{NUTRITION.weightInterpretation.method}</p><p className="mb-1 text-zinc-400">정상 변동 ±{NUTRITION.weightInterpretation.normalDailyFluctuationKg}kg · 원인:</p><ul className="mb-2 space-y-0.5 text-zinc-400">{NUTRITION.weightInterpretation.causes.map((c, i) => <li key={i}>• {c}</li>)}</ul><p className="rounded-lg bg-lime-500/10 p-2 text-lime-300">{NUTRITION.weightInterpretation.rule}</p></Collapsible>
     <Collapsible title={profile.goal==="maintain"?"단계별 트레이닝 타임라인":`예상 타임라인 (${timeline.estimatedDurationMonths}개월)`} icon="flag"><div className="space-y-2">{timeline.phases.map((p, i) => <div key={i} className="rounded-lg bg-zinc-800/50 p-2.5"><div className="flex items-center justify-between"><b className="text-zinc-200">{p.range}</b><Pill tone="sky">주 {p.weeklyRateKg}kg</Pill></div><p className="mt-1 text-xs text-zinc-400">{p.note}</p></div>)}<p className="text-xs text-zinc-500">{profile.goal==="maintain"?"🛋 디로드: ":"🛋 다이어트 브레이크: "}{timeline.dietBreak.frequency} — {timeline.dietBreak.method}</p></div></Collapsible>
     <Collapsible title="정체기 돌파법" icon="fire"><ul className="space-y-2">{NUTRITION.plateau.map((p, i) => <li key={i}><b className="text-amber-300">{p.method}</b><br /><span className="text-zinc-400">{p.detail}</span></li>)}</ul></Collapsible>
 
     <SectionTitle icon="sparkle">핵심 교육</SectionTitle>
-    {EDUCATION.lessons.map((l, i) => <Collapsible key={i} title={<span>{l.icon} {l.title}</span>}><p className="mb-2 text-zinc-300">{l.summary}</p><ul className="space-y-1">{l.points.map((p, j) => <li key={j} className="flex gap-2"><span className="text-emerald-400">›</span>{p}</li>)}</ul></Collapsible>)}
+    {EDUCATION.lessons.map((l, i) => <Collapsible key={i} title={<span>{l.icon} {l.title}</span>}><p className="mb-2 text-zinc-300">{l.summary}</p><ul className="space-y-1">{l.points.map((p, j) => <li key={j} className="flex gap-2"><span className="text-lime-400">›</span>{p}</li>)}</ul></Collapsible>)}
     <Collapsible title="멘탈 & 동기부여" icon="fire"><ul className="space-y-2">{EDUCATION.mindset.map((m, i) => <li key={i} className="flex gap-2"><span className="text-violet-400">★</span>{m}</li>)}</ul></Collapsible>
 
     <button onClick={exportData} className="flex w-full items-center justify-center gap-2 rounded-2xl border border-zinc-700 py-3 text-sm font-semibold text-zinc-300 hover:bg-zinc-800"><Ico name="download" className="w-4 h-4" /> 내 데이터 백업 (JSON 내보내기)</button>
@@ -3088,8 +3187,8 @@ function Home({ profile, nut, weightLog, sessions, water, go, lessonIdx }) {
 
   return <div className="space-y-4">
     <div className="flex items-end justify-between">
-      <div><p className="text-sm text-zinc-400">오늘도 목표를 향해 👊</p><h1 className="text-2xl font-extrabold text-zinc-50">{cur}<span className="text-base text-zinc-400">kg</span> <span className="text-zinc-600">→</span> {profile.goalWeight}<span className="text-base text-zinc-400">kg</span></h1></div>
-      <div className="text-right"><p className="text-xs text-zinc-500">{profile.goal==="gain"?"증량":profile.goal==="maintain"?"변화":"감량"}</p><p className="text-xl font-bold text-emerald-400">{lost>0.05?"-":lost<-0.05?"+":""}{Math.abs(lost).toFixed(1)}</p></div>
+      <div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-lime-400">ONE MORE REP</p><h1 className="mt-0.5 text-2xl font-extrabold text-zinc-50">{cur}<span className="text-base text-zinc-400">kg</span> <span className="text-zinc-600">→</span> {profile.goalWeight}<span className="text-base text-zinc-400">kg</span></h1></div>
+      <div className="text-right"><p className="text-xs text-zinc-500">{profile.goal==="gain"?"증량":profile.goal==="maintain"?"변화":"감량"}</p><p className="text-xl font-bold text-lime-400">{lost>0.05?"-":lost<-0.05?"+":""}{Math.abs(lost).toFixed(1)}</p></div>
     </div>
 
     <Card className="p-4"><div className="mb-2 flex items-center justify-between text-sm"><span className="font-semibold text-zinc-200">{profile.goal==="maintain"?`현재 ${cur.toFixed(1)}kg`:`목표까지 ${Math.abs(cur-profile.goalWeight).toFixed(1)}kg`}</span><span className="text-zinc-400">{pct.toFixed(0)}%</span></div><Bar value={pct} /><div className="mt-1.5 flex justify-between text-[11px] text-zinc-500"><span>{profile.startWeight}kg</span><span>{profile.goalWeight}kg</span></div></Card>
@@ -3102,7 +3201,7 @@ function Home({ profile, nut, weightLog, sessions, water, go, lessonIdx }) {
           <Pill tone={focusToday?"violet":isCardio?"sky":"zinc"}>{focusToday?"근력":isCardio?"유산소":"휴식"}</Pill>
           <p className="mt-1.5 text-sm text-zinc-300">{focusToday ? focusToday : isCardio ? "저충격 유산소 30~40분 (실내자전거·경사걷기)" : "완전 휴식 · 회복"}</p>
         </div>
-        {focusToday && <button onClick={() => go("workout", splitToday)} className="shrink-0 rounded-xl bg-emerald-500 px-3 py-2 text-sm font-bold text-zinc-950">운동 시작</button>}
+        {focusToday && <button onClick={() => go("workout", splitToday)} className="shrink-0 rounded-xl bg-lime-500 px-3 py-2 text-sm font-bold text-zinc-950">운동 시작</button>}
         {isCardio && <button onClick={() => go("workout")} className="shrink-0 rounded-xl bg-sky-500 px-3 py-2 text-sm font-bold text-zinc-950">유산소</button>}
       </div>
     </Card>
@@ -3112,13 +3211,13 @@ function Home({ profile, nut, weightLog, sessions, water, go, lessonIdx }) {
       <Card className="flex flex-col items-center p-4"><Ring value={(weekCount/4)*100} size={88} color="#a78bfa"><span className="text-xl font-extrabold text-zinc-100">{weekCount}<span className="text-sm text-zinc-500">/4</span></span></Ring><p className="mt-2 text-xs font-semibold text-zinc-300">이번 주 운동</p></Card>
       <Card className="p-4">
         <p className="mb-1 text-xs font-semibold text-zinc-300">오늘 목표 영양</p>
-        <p className="text-lg font-extrabold text-emerald-400">{nut.target.toLocaleString()}<span className="text-xs text-zinc-500">kcal</span></p>
+        <p className="text-lg font-extrabold text-lime-400">{nut.target.toLocaleString()}<span className="text-xs text-zinc-500">kcal</span></p>
         <div className="mt-1.5 space-y-1">{macroBars.map(([l, v, t]) => <div key={l} className="flex items-center gap-1.5 text-[11px]"><span className="w-8 text-zinc-500">{l}</span><div className="flex-1"><Bar value={100} tone={t} /></div><span className="w-7 text-right text-zinc-300">{v}g</span></div>)}</div>
       </Card>
     </div>
 
     {/* 체중 추세 미니 */}
-    <Card className="p-4"><div className="mb-1 flex items-center justify-between"><span className="text-sm font-semibold text-zinc-200">체중 추세</span><button onClick={() => go("progress")} className="text-xs text-emerald-400">기록하기 ›</button></div><WeightChart log={weightLog} start={profile.startWeight} goal={profile.goalWeight} /></Card>
+    <Card className="p-4"><div className="mb-1 flex items-center justify-between"><span className="text-sm font-semibold text-zinc-200">체중 추세</span><button onClick={() => go("progress")} className="text-xs text-lime-400">기록하기 ›</button></div><WeightChart log={weightLog} start={profile.startWeight} goal={profile.goalWeight} /></Card>
 
     {/* 1분 레슨 + 다음 목표 */}
     <Card className="p-4"><div className="mb-1 flex items-center gap-2"><Ico name="sparkle" className="w-4 h-4 text-violet-400" /><span className="text-xs font-bold text-violet-300">1분 레슨</span></div><p className="text-sm font-semibold text-zinc-100">{lesson.icon} {lesson.title}</p><p className="mt-1 text-xs leading-snug text-zinc-400">{lesson.summary}</p></Card>
@@ -3133,16 +3232,16 @@ function ProfileModal({ profile, setProfile, onClose }) {
   return <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 sm:items-center" onClick={onClose}>
     <div className="w-full max-w-md rounded-t-3xl border border-zinc-800 bg-zinc-900 p-5 sm:rounded-3xl" onClick={(e) => e.stopPropagation()}>
       <h2 className="mb-4 text-lg font-bold text-zinc-100">내 정보</h2>
-      <div className="grid grid-cols-2 gap-3">{[["키(cm)","height"],["현재 체중(kg)","weight"],["목표 체중(kg)","goalWeight"],["나이","age"],["시작 체중(kg)","startWeight"]].map(([l, k]) => <label key={k} className="text-sm"><span className="text-zinc-400">{l}</span><input value={p[k]} onChange={(e) => setP({ ...p, [k]: parseFloat(e.target.value)||0 })} inputMode="decimal" className="mt-1 w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 outline-none focus:border-emerald-500" /></label>)}</div>
+      <div className="grid grid-cols-2 gap-3">{[["키(cm)","height"],["현재 체중(kg)","weight"],["목표 체중(kg)","goalWeight"],["나이","age"],["시작 체중(kg)","startWeight"]].map(([l, k]) => <label key={k} className="text-sm"><span className="text-zinc-400">{l}</span><input value={p[k]} onChange={(e) => setP({ ...p, [k]: parseFloat(e.target.value)||0 })} inputMode="decimal" className="mt-1 w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 outline-none focus:border-lime-500" /></label>)}</div>
       <p className="mb-1 mt-4 text-sm text-zinc-400">활동 수준</p>
-      <div className="grid grid-cols-2 gap-1.5">{acts.map(([v, l]) => <button key={v} onClick={() => setP({ ...p, activity: v })} className={cls("rounded-xl px-2 py-2 text-xs font-semibold", p.activity===v?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+      <div className="grid grid-cols-2 gap-1.5">{acts.map(([v, l]) => <button key={v} onClick={() => setP({ ...p, activity: v })} className={cls("rounded-xl px-2 py-2 text-xs font-semibold", p.activity===v?"bg-lime-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
       <p className="mb-1 mt-4 text-sm text-zinc-400">목표</p>
-      <div className="grid grid-cols-3 gap-1.5">{[["cut","감량"],["maintain","유지"],["gain","증량"]].map(([v, l]) => <button key={v} onClick={() => setP({ ...p, goal: v })} className={cls("rounded-xl px-2 py-2 text-xs font-semibold", p.goal===v?"bg-emerald-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
+      <div className="grid grid-cols-3 gap-1.5">{[["cut","감량"],["maintain","유지"],["gain","증량"]].map(([v, l]) => <button key={v} onClick={() => setP({ ...p, goal: v })} className={cls("rounded-xl px-2 py-2 text-xs font-semibold", p.goal===v?"bg-lime-500 text-zinc-950":"bg-zinc-800 text-zinc-300")}>{l}</button>)}</div>
       <div className="mt-4 flex items-center justify-between">
         <span className="text-sm text-zinc-400">계란 제외</span>
-        <button onClick={() => setP({ ...p, excludeEgg: !p.excludeEgg })} className={cls("relative h-7 w-12 shrink-0 rounded-full transition-colors", p.excludeEgg ? "bg-emerald-500" : "bg-zinc-700")}><span className={cls("absolute top-1 h-5 w-5 rounded-full bg-white transition-all", p.excludeEgg ? "left-6" : "left-1")} /></button>
+        <button onClick={() => setP({ ...p, excludeEgg: !p.excludeEgg })} className={cls("relative h-7 w-12 shrink-0 rounded-full transition-colors", p.excludeEgg ? "bg-lime-500" : "bg-zinc-700")}><span className={cls("absolute top-1 h-5 w-5 rounded-full bg-white transition-all", p.excludeEgg ? "left-6" : "left-1")} /></button>
       </div>
-      <button onClick={() => { setProfile(p); onClose(); }} className="mt-5 w-full rounded-2xl bg-emerald-500 py-3 font-bold text-zinc-950 hover:bg-emerald-400">저장</button>
+      <button onClick={() => { setProfile(p); onClose(); }} className="mt-5 w-full rounded-2xl bg-lime-500 py-3 font-bold text-zinc-950 hover:bg-lime-400">저장</button>
     </div>
   </div>;
 }
@@ -3289,20 +3388,20 @@ function SyncModal({ sync, onClose }) {
         <button onClick={onClose} className="px-1 text-xl leading-none text-zinc-500 hover:text-zinc-300">✕</button>
       </div>
       {sync.user ? <div className="space-y-3">
-        <p className="text-sm text-zinc-300">로그인됨 · <b className="text-emerald-300">{sync.user.email}</b></p>
+        <p className="text-sm text-zinc-300">로그인됨 · <b className="text-lime-300">{sync.user.email}</b></p>
         <p className="text-xs text-zinc-500">상태: {SYNC_STATUS[sync.status] || sync.status}{sync.lastSync ? " · 마지막 동기화 " + fmtSyncTime(sync.lastSync) : ""}</p>
         <p className="text-xs leading-relaxed text-zinc-500">이 계정으로 로그인한 모든 기기에서 데이터가 자동으로 동기화됩니다. 기록을 바꾸면 잠시 뒤 자동 저장되고, 다른 기기에서 앱을 열면 최신 데이터를 받아옵니다.</p>
         {sync.err && <p className="rounded-lg bg-rose-500/10 p-2 text-xs text-rose-300">{sync.err}</p>}
         <div className="flex gap-2">
-          <button onClick={sync.syncNow} className="flex-1 rounded-2xl bg-emerald-500 py-3 text-sm font-bold text-zinc-950 hover:bg-emerald-400">지금 동기화</button>
+          <button onClick={sync.syncNow} className="flex-1 rounded-2xl bg-lime-500 py-3 text-sm font-bold text-zinc-950 hover:bg-lime-400">지금 동기화</button>
           <button onClick={sync.signOut} className="rounded-2xl border border-zinc-700 px-4 py-3 text-sm font-semibold text-zinc-300 hover:bg-zinc-800">로그아웃</button>
         </div>
       </div> : <div className="space-y-3">
         <p className="text-xs leading-relaxed text-zinc-400">이메일로 계정을 만들면 폰·PC 등 모든 기기에서 같은 데이터를 쓸 수 있어요. 비밀번호는 이 앱 동기화 전용입니다.</p>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" placeholder="이메일" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
-        <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder="비밀번호 (6자 이상)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" placeholder="이메일" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-lime-500" />
+        <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder="비밀번호 (6자 이상)" className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-lime-500" />
         {sync.err && <p className="rounded-lg bg-rose-500/10 p-2 text-xs text-rose-300">{sync.err}</p>}
-        <button disabled={busy || !email || pw.length < 6} onClick={submit} className="w-full rounded-2xl bg-emerald-500 py-3 text-sm font-bold text-zinc-950 hover:bg-emerald-400 disabled:opacity-50">{busy ? "처리 중…" : (mode === "in" ? "로그인" : "계정 만들기")}</button>
+        <button disabled={busy || !email || pw.length < 6} onClick={submit} className="w-full rounded-2xl bg-lime-500 py-3 text-sm font-bold text-zinc-950 hover:bg-lime-400 disabled:opacity-50">{busy ? "처리 중…" : (mode === "in" ? "로그인" : "계정 만들기")}</button>
         <button onClick={() => setMode(mode === "in" ? "up" : "in")} className="w-full text-center text-xs text-zinc-400 hover:text-zinc-200">{mode === "in" ? "처음이세요? 계정 만들기" : "이미 계정이 있어요 → 로그인"}</button>
         <p className="text-[11px] leading-relaxed text-zinc-600">⚠ 여러 기기를 처음 연결할 땐 어느 데이터를 쓸지 물어봅니다. 걱정되면 먼저 진행 탭에서 '백업(JSON)'을 받아두세요.</p>
       </div>}
@@ -3325,15 +3424,16 @@ function AuthGate({ sync, onGuest }) {
   return <div className="flex min-h-screen flex-col justify-center bg-zinc-950 px-5 py-10 text-zinc-100" style={{ fontFamily: "'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif" }}>
     <div className="mx-auto w-full max-w-sm">
       <div className="mb-8 flex flex-col items-center text-center">
-        <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-8 h-8" stroke={2.4} /></span>
-        <span className="text-2xl font-extrabold tracking-tight">핏코치</span>
-        <p className="mt-1.5 text-sm text-zinc-400">감량·증량 목표, 운동·식단을 한 곳에서</p>
+        <span className="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-lime-300 to-lime-400 text-zinc-950 shadow-lg shadow-lime-500/20"><Ico name="fire" className="w-9 h-9" stroke={2.5} /></span>
+        <span className="text-3xl font-extrabold tracking-tight">핏코치</span>
+        <p className="mt-2 text-[11px] font-extrabold uppercase tracking-[0.3em] text-lime-400">ONE MORE REP</p>
+        <p className="mt-2 text-sm text-zinc-400">감량·유지·증량, 운동·식단을 한 곳에서</p>
       </div>
       <div className="space-y-3">
-        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" placeholder="이메일" onKeyDown={(e) => { if (e.key === "Enter" && ok) submit(); }} className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
-        <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder="비밀번호 (6자 이상)" onKeyDown={(e) => { if (e.key === "Enter" && ok) submit(); }} className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-emerald-500" />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" placeholder="이메일" onKeyDown={(e) => { if (e.key === "Enter" && ok) submit(); }} className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-lime-500" />
+        <input value={pw} onChange={(e) => setPw(e.target.value)} type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder="비밀번호 (6자 이상)" onKeyDown={(e) => { if (e.key === "Enter" && ok) submit(); }} className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-3 py-3 text-sm outline-none focus:border-lime-500" />
         {sync.err && <p className="rounded-lg bg-rose-500/10 p-2 text-xs text-rose-300">{sync.err}</p>}
-        <button disabled={!ok} onClick={submit} className="w-full rounded-2xl bg-emerald-500 py-3.5 text-sm font-bold text-zinc-950 hover:bg-emerald-400 disabled:opacity-50">{busy ? "처리 중…" : (mode === "in" ? "로그인" : "계정 만들기")}</button>
+        <button disabled={!ok} onClick={submit} className="w-full rounded-2xl bg-lime-500 py-3.5 text-sm font-bold text-zinc-950 hover:bg-lime-400 disabled:opacity-50">{busy ? "처리 중…" : (mode === "in" ? "로그인" : "계정 만들기")}</button>
         <button onClick={() => setMode(mode === "in" ? "up" : "in")} className="w-full text-center text-xs text-zinc-400 hover:text-zinc-200">{mode === "in" ? "처음이세요? 계정 만들기" : "이미 계정이 있어요 → 로그인"}</button>
       </div>
       <div className="mt-8 border-t border-zinc-800 pt-5 text-center">
@@ -3394,9 +3494,9 @@ function App() {
   return <div className="min-h-screen bg-zinc-950 text-zinc-100" style={{ fontFamily: "'Pretendard','Apple SD Gothic Neo',system-ui,sans-serif" }}>
     <header className="sticky top-0 z-30 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
       <div className="mx-auto flex max-w-md items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-2"><span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-5 h-5" stroke={2.4} /></span><span className="text-lg font-extrabold tracking-tight">핏코치</span></div>
+        <div className="flex items-center gap-2"><span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-lime-400 to-lime-300 text-zinc-950"><Ico name="fire" className="w-5 h-5" stroke={2.4} /></span><span className="text-lg font-extrabold tracking-tight">핏코치</span></div>
         <div className="flex items-center gap-2">
-          {sync.enabled && <button onClick={() => setShowSync(true)} title="기기 간 동기화" className="flex items-center gap-1.5 rounded-full bg-zinc-800 px-2.5 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700"><span className={cls("h-2 w-2 rounded-full", sync.user ? (sync.status === "error" ? "bg-rose-400" : "bg-emerald-400") : "bg-zinc-500")} />☁</button>}
+          {sync.enabled && <button onClick={() => setShowSync(true)} title="기기 간 동기화" className="flex items-center gap-1.5 rounded-full bg-zinc-800 px-2.5 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700"><span className={cls("h-2 w-2 rounded-full", sync.user ? (sync.status === "error" ? "bg-rose-400" : "bg-lime-400") : "bg-zinc-500")} />☁</button>}
           <button onClick={() => setShowProfile(true)} className="flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700"><Ico name="edit" className="w-3.5 h-3.5" /> 내 정보</button>
         </div>
       </div>
@@ -3412,7 +3512,7 @@ function App() {
     <FloatingTimer timer={timer} setTimer={setTimer} />
 
     <nav className="fixed bottom-0 left-0 right-0 z-30 border-t border-zinc-800 bg-zinc-950/95 backdrop-blur">
-      <div className="mx-auto grid max-w-md grid-cols-4">{NAV.map(([k, l, ic]) => <button key={k} onClick={() => setTab(k)} className={cls("flex flex-col items-center gap-0.5 py-2.5 text-[11px] font-medium", tab===k?"text-emerald-400":"text-zinc-500 hover:text-zinc-300")}><Ico name={ic} className="w-6 h-6" />{l}</button>)}</div>
+      <div className="mx-auto grid max-w-md grid-cols-4">{NAV.map(([k, l, ic]) => <button key={k} onClick={() => setTab(k)} className={cls("flex flex-col items-center gap-0.5 py-2.5 text-[11px] font-medium", tab===k?"text-lime-400":"text-zinc-500 hover:text-zinc-300")}><Ico name={ic} className="w-6 h-6" />{l}</button>)}</div>
     </nav>
 
     {showProfile && <ProfileModal profile={profile} setProfile={setProfile} onClose={() => setShowProfile(false)} />}
